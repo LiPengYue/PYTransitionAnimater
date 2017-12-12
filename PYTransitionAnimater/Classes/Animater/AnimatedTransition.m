@@ -9,7 +9,7 @@
 #import "AnimatedTransition.h"
 
 @interface AnimatedTransition ()
-@property (nonatomic,strong) id <UIViewControllerContextTransitioning> transitionContext;
+@property (nonatomic,weak) id <UIViewControllerContextTransitioning> transitionContext;
 //动画时长
 @property (nonatomic,assign) CGFloat animaDuration;
 
@@ -101,7 +101,12 @@
 //            [transitionContext completeTransition:YES];
 //        }];
 //    }
-    
+//    __weak typeof(toVC) wakeToVC = toVC;
+//    __weak typeof(fromVC) wakeFromVC = fromVC;
+//    __weak typeof(toView) wakeToView = toView;
+//    __weak typeof(fromView) wakeFromView = fromView;
+//    __weak typeof(contentView) wakeContentView = contentView;
+//    __weak typeof(self) wakeSelf = self;
     //4. contentView 设置蒙版
     if (self.setupContainerViewBlock) {
         self.setupContainerViewBlock(contentView);

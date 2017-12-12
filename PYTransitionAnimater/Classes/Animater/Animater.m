@@ -80,46 +80,47 @@
 //MARK: ----------------- present --------------------------
 ///前两个方法是针对动画切换的，我们需要分别在呈现VC和解散VC时，给出一个实现了UIViewControllerAnimatedTransitioning接口的对象（其中包含切换时长和如何切换）。
 - (id<UIViewControllerAnimatedTransitioning>) animationControllerForPresentedController:(UIViewController *)presented presentingController:(UIViewController *)presenting sourceController:(UIViewController *)source {
+    __weak typeof(self)weakSelf = self;
     //动画类型
     self.animatedTransition.animatedTransitionType = AnimatedTransitionType_Present;
     //动画时长
-    self.animatedTransition.presentDuration = self.presentDuration;
+    self.animatedTransition.presentDuration = weakSelf.presentDuration;
     //容器视图
-    [self.animatedTransition setupContainerViewWithBlock:^(UIView *containerView) {
-        if (self.setupContainerViewBlock) {
-            self.setupContainerViewBlock(containerView);
+    [weakSelf.animatedTransition setupContainerViewWithBlock:^(UIView *containerView) {
+        if (weakSelf.setupContainerViewBlock) {
+            weakSelf.setupContainerViewBlock(containerView);
         }
     }];
     //动画传递
-    [self.animatedTransition presentAnimaWithBlock:^(UIViewController *toVC, UIViewController *fromeVC, UIView *toView, UIView *fromeView) {
-        if (self.presentAnimaBlock) {
-            self.presentAnimaBlock(toVC,fromeVC,toView,fromeView);
+    [weakSelf.animatedTransition presentAnimaWithBlock:^(UIViewController *toVC, UIViewController *fromeVC, UIView *toView, UIView *fromeView) {
+        if (weakSelf.presentAnimaBlock) {
+            weakSelf.presentAnimaBlock(toVC,fromeVC,toView,fromeView);
         }
     }];
-    return self.animatedTransition;
+    return weakSelf.animatedTransition;
 }
 
 
 //MARK: ------------------- Dismissed -------------------
 -(id< UIViewControllerAnimatedTransitioning >)animationControllerForDismissedController:(UIViewController *)dismissed{
-    
+     __weak typeof (self)weakSelf = self;
     //动画类型
-    self.animatedTransition.animatedTransitionType = AnimatedTransitionType_Dismiss;
+    weakSelf.animatedTransition.animatedTransitionType = AnimatedTransitionType_Dismiss;
     //动画时长
-    self.animatedTransition.dismissDuration = self.dismissDuration;
+    weakSelf.animatedTransition.dismissDuration = weakSelf.dismissDuration;
     //容器视图
-    [self.animatedTransition setupContainerViewWithBlock:^(UIView *containerView) {
-        if (self.setupContainerViewBlock) {
-            self.setupContainerViewBlock(containerView);
+    [weakSelf.animatedTransition setupContainerViewWithBlock:^(UIView *containerView) {
+        if (weakSelf.setupContainerViewBlock) {
+            weakSelf.setupContainerViewBlock(containerView);
         }
     }];
     //动画传递
-    [self.animatedTransition dismissAnimaWithBlock:^(UIViewController *toVC, UIViewController *fromeVC, UIView *toView, UIView *fromeView) {
-        if (self.dismissAnimaBlock) {
-            self.dismissAnimaBlock(toVC,fromeVC,toView,fromeView);
+    [weakSelf.animatedTransition dismissAnimaWithBlock:^(UIViewController *toVC, UIViewController *fromeVC, UIView *toView, UIView *fromeView) {
+        if (weakSelf.dismissAnimaBlock) {
+            weakSelf.dismissAnimaBlock(toVC,fromeVC,toView,fromeView);
         }
     }];
-    return self.animatedTransition;
+    return weakSelf.animatedTransition;
 }
 
 ////MARK: -------------------- 3 -------------------
