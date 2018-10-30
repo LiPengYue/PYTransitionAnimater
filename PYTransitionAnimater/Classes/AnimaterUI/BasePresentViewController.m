@@ -7,24 +7,27 @@
 //
 
 #import "BasePresentViewController.h"
-#import <Animater.h>
+#import "Animater.h"
 
 @interface BasePresentViewController ()
-@property (nonatomic,strong) Animater *animater;
-@property (nonatomic,strong) UIButton *backgroundButton;
-@property (nonatomic,assign) CGRect fromeViewFrame;
+@property (nonatomic,strong) Animater *animation_animater;
+@property (nonatomic,strong) UIButton *animation_backgroundButton;
+@property (nonatomic,assign) CGRect animation_fromeViewFrame;
 /// 在present 时 fromeview最终的frame
-@property (nonatomic,assign) CGRect presentFromViewFrame;
+@property (nonatomic,assign) CGRect animation_presentFromViewFrame;
 /// fromeView
-@property (nonatomic,strong) UIView *fromeView;
+@property (nonatomic,strong) UIView *animation_fromeView;
 
 @property (nonatomic,copy) BOOL(^willDismissBlock)(BasePresentViewController *presentVC);
 @property (nonatomic,copy) void(^didDismissBlock)(BasePresentViewController *presentVC);
 @property (nonatomic,copy) BOOL(^clickBackgroundButtonCallBack)(BasePresentViewController *presentVC);
-@property (nonatomic,copy) void(^presetionAnimatingBlock)(UIView *toView, UIView *fromeView);
-@property (nonatomic,copy) void(^dismissAnimatingBlock)(UIView *toView,UIView *fromeView);
+@property (nonatomic,copy) void(^presetionAnimationBeginBlock)(UIView *toView, UIView *fromeView);
+@property (nonatomic,copy) void(^dismissAnimationBeginBlock)(UIView *toView,UIView *fromeView);
 @property (nonatomic,copy) void(^dismissAnimatingCompletion)(UIView *toView, UIView *fromeView);
 @property (nonatomic,copy) void(^presentAnimatingCompletion)(UIView *toView,UIView *fromeView);
+
+@property (nonatomic,copy) BasicAnimationBlock presentBeginBasicAnimationBlock;
+@property (nonatomic,copy) BasicAnimationBlock dismissBeginBasicAnimationBlock;
 @end
 
 
@@ -36,15 +39,16 @@
 {
     self = [super init];
     if (self) {
-        self.transitioningDelegate = self.animater;
-        self.modalPresentationStyle = UIModalPresentationCustom;
+        self.transitioningDelegate = self.animation_animater;
+        self.modalPresentationStyle = UIModalPresentationOverFullScreen;
+        self.modalTransitionStyle = UIModalTransitionStyleCrossDissolve;
     }
     return self;
 }
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    [self setup];
+    [self animater_setup];
 }
 
 - (CGRect) getAnimationViewFrame {
@@ -57,40 +61,38 @@
 }
 
 #pragma mark - functions
-- (void) setup {
-    [self setupAnimater];
-    [self setupButton];
+- (void) animater_setup {
+    [self animater_setupAnimater];
+    [self animater_setupButton];
 }
 
 
 // MARK: handle views
-- (void) setupButton {
+- (void) animater_setupButton {
     [self.view addSubview:self.backgroundButton];
     self.backgroundButton.frame = self.view.bounds;
     [self.backgroundButton addTarget:self action:@selector(clickBackgroundButtonFunc) forControlEvents:UIControlEventTouchUpInside];
 }
 
-- (void) setupAnimater {
+- (void) animater_setupAnimater {
     __weak typeof(self) weakSelf = self;
     
-    [self.animater setupContainerViewWithBlock:^(UIView *containerView) {
-//        [UIView animateWithDuration:0.5 animations:^{
-            containerView.backgroundColor = weakSelf.config.backgroundColor;
-//        }];
+    [self.animation_animater setupContainerViewWithBlock:^(UIView *containerView) {
+        _containerView = containerView;
     }];
     
-    [self.animater presentAnimaWithBlock:^(UIViewController *toVC, UIViewController *fromVC, UIView *toView, UIView *fromView) {
+    [self.animation_animater presentAnimaWithBlock:^(UIViewController *toVC, UIViewController *fromVC, UIView *toView, UIView *fromView) {
         
         if (!weakSelf.animationView) {
             NSLog(@"🌶 没有设置animationView 不能执行动画");
         }
+        
         UIView *view = fromView ? fromView : fromVC.view;
-        weakSelf.fromeView = view;
-        weakSelf.fromeViewFrame = view.frame;
-        weakSelf.view.backgroundColor = weakSelf.config.backgroundColor;
+        weakSelf.animation_fromeView = view;
+        weakSelf.animation_fromeViewFrame = view.frame;
         switch (weakSelf.config.presentStyle) {
             case PresentAnimationStyleNull:
-                weakSelf.animater.isAccomplishAnima = true;
+                weakSelf.animation_animater.isAccomplishAnima = true;
                 break;
             case PresentAnimationStyleZoom:
                 [weakSelf presentZoomAnimation: fromView andToView: toView];
@@ -111,14 +113,14 @@
         }
     }];
     
-    [self.animater dismissAnimaWithBlock:^(UIViewController *toVC, UIViewController *fromVC, UIView *toView, UIView *fromView) {
+    [self.animation_animater dismissAnimaWithBlock:^(UIViewController *toVC, UIViewController *fromVC, UIView *toView, UIView *fromView) {
         if (!weakSelf.animationView) {
             NSLog(@"🌶 没有设置animationView 不能执行动画");
         }
-        UIView *view = toView ? toView : toVC.view;
+        
         switch (weakSelf.config.dismissStyle) {
             case DismissAnimationStyleNull:
-                weakSelf.animater.isAccomplishAnima = true;
+                weakSelf.animation_animater.isAccomplishAnima = true;
             case DismissAnimationStyleZoom:
                 [weakSelf dismissZoomAnimation:fromView andToView:toView];
             case DismissAnimationStyleUp_bottom:
@@ -143,45 +145,153 @@
     return !rect.size.width && !rect.size.height;
 }
 
-
+- (void)viewWillAppear:(BOOL)animated {
+    [super viewWillAppear:animated];
+    
+}
 // present animation func
 - (void) presentAnimation: (void(^)(BasePresentViewController *weakSelf))block
             andCompletionBlock:(void(^)(BasePresentViewController *weakSelf))completion {
+    [self present_animationViewShadowAnimation: self.config.presentDuration];
+    [self presetionAnimationBeginBlockFunc];
     
     __weak typeof(self)weakSelf = self;
     self.animationView.alpha = self.config.presentStartAlpha;
+    self.view.backgroundColor = [UIColor colorWithWhite:0 alpha:0];
+    
      [UIView animateWithDuration:self.config.presentDuration
                            delay:self.config.presentDelayDuration
                          options:self.config.presentAnimationOptions
                       animations:
       ^{
+          
          self.animationView.alpha = 1;
-          if (self.presetionAnimatingBlock) {
-              self.presentAnimatingCompletion(self.animationView, self.fromeView);
-          }
          if (block) {
              block(weakSelf);
          }
+          self.view.backgroundColor = self.config.backgroundColor;
      } completion:^(BOOL finished) {
-         self.animater.isAccomplishAnima = true;
-         if (self.presentAnimatingCompletion) {
-             self.presentAnimatingCompletion(self.animationView, self.fromeView);
-         }
-         
+         self.animation_animater.isAccomplishAnima = true;
          if (completion) {
              completion(weakSelf);
          }
+         [self presentCompletion_animationViewShadowAnimation];
+         [self presentCompletionFunc];
      }];
 }
 
+- (void) dismiss_animationViewShadowAnimation {
+    CAAnimationGroup *group = [[CAAnimationGroup alloc]init];
+    
+    CABasicAnimation *shadowOffset_anim;
+    CABasicAnimation *opacity_anim;
+    CABasicAnimation *color_anim;
+    
+    shadowOffset_anim = [self shadowAnimationWithToOffset:self.config.dismissShadowOffset
+                                             andFromValue:self.config.presentShadowOffset];
+    opacity_anim = [self shadowAnimationWithOpacity:self.config.dismissShadowOpacity];
+    color_anim = [self shadowAnimationWithColor:self.config.dismissShadowColor];
+    
+    NSMutableArray *array = [NSMutableArray arrayWithCapacity:3];
+    shadowOffset_anim ? [array addObject:shadowOffset_anim] : nil;
+    opacity_anim ? [array addObject:opacity_anim] : nil;
+    color_anim ? [array addObject:color_anim] : nil;
+    group.animations = array.copy;
+    
+    group.duration = self.config.dismissDuration;
+    group.removedOnCompletion = NO;
+    group.fillMode = kCAFillModeForwards;
+    group.beginTime = 0;
+    
+    [self.animationView.layer addAnimation:group forKey:@"group"];
+}
+
+- (void) presentCompletion_animationViewShadowAnimation {
+    [self present_animationViewShadowAnimation: 0.3];
+}
+
+- (void) present_animationViewShadowAnimation: (CGFloat)duration {
+    
+    self.animationView.layer.shadowOpacity = self.config.dismissShadowOpacity;
+    
+    CAAnimationGroup *group = [[CAAnimationGroup alloc]init];
+    
+    CABasicAnimation *shadowOffset_anim;
+    CABasicAnimation *opacity_anim;
+    CABasicAnimation *color_anim;
+    
+    shadowOffset_anim = [self shadowAnimationWithToOffset:self.config.presentShadowOffset
+                                             andFromValue:self.config.dismissShadowOffset];
+    opacity_anim = [self shadowAnimationWithOpacity:self.config.presentShadowOpacity];
+    color_anim = [self shadowAnimationWithColor:self.config.presentShadowColor];
+    
+    NSMutableArray *array = [NSMutableArray arrayWithCapacity:3];
+    shadowOffset_anim ? [array addObject:shadowOffset_anim] : nil;
+    opacity_anim ? [array addObject:opacity_anim] : nil;
+    color_anim ? [array addObject:color_anim] : nil;
+    group.animations = array.copy;
+    
+    group.duration = duration;
+    group.removedOnCompletion = NO;
+    group.fillMode = kCAFillModeForwards;
+    group.beginTime = 0;
+    
+    [self.animationView.layer addAnimation:group forKey:@"group"];
+}
+
+- (CABasicAnimation *) createBasicAnimationWithKey: (NSString *)key {
+    CABasicAnimation *anim = [CABasicAnimation animationWithKeyPath:key];
+    anim.removedOnCompletion = NO;
+    anim.fillMode = kCAFillModeForwards;
+    return anim;
+}
+
+- (CABasicAnimation *) shadowAnimationWithToOffset: (CGSize)toOffset andFromValue: (CGSize) fromOffset {
+    if (CGSizeEqualToSize(fromOffset, CGSizeZero)
+        && CGSizeEqualToSize(toOffset, CGSizeZero)) {
+        return nil;
+    }
+    
+    CABasicAnimation *shadowOffset_anim = [self createBasicAnimationWithKey:@"shadowOffset"];
+    shadowOffset_anim.fromValue = [NSValue valueWithCGSize:fromOffset];
+    shadowOffset_anim.toValue = [NSValue valueWithCGSize:toOffset];
+//    self.animationView.layer.shadowOffset = toOffset;
+    return shadowOffset_anim;
+}
+
+- (CABasicAnimation *) shadowAnimationWithOpacity: (CGFloat) opacity {
+    if (opacity < 0) { return nil; }
+    CABasicAnimation *opacity_anim = [self createBasicAnimationWithKey:@"shadowOpacity"];
+    self.animationView.layer.shadowOpacity = opacity;
+    return opacity_anim;
+}
+- (CABasicAnimation *) shadowAnimationWithColor: (UIColor *)color {
+    if (!color) return nil;
+    CABasicAnimation *color_anim = [self createBasicAnimationWithKey:@"shadowColor"];
+    self.animationView.layer.shadowColor = color.CGColor;
+    return color_anim;
+}
+
+
+
+- (void) presentCompletionFunc {
+    if (self.presentAnimatingCompletion) {
+        self.presentAnimatingCompletion(self.animationView, self.animation_fromeView);
+    }
+}
+
+- (void) presetionAnimationBeginBlockFunc {
+    if (self.presetionAnimationBeginBlock) {
+        self.presetionAnimationBeginBlock(self.animationView,
+                                         self.animation_fromeView);
+    }
+}
 - (void) presentZoomAnimation: (UIView *)fromView
                     andToView: (UIView *)toview {
     
     self.animationView.transform = CGAffineTransformMakeScale(0, 0);
-    self.animationView.alpha = 0;
     [self presentAnimation:^(BasePresentViewController *weakSelf) {
         weakSelf.animationView.transform = CGAffineTransformMakeScale(1, 1);
-        weakSelf.animationView.alpha = 1;
     } andCompletionBlock:nil];
 }
 
@@ -193,13 +303,13 @@
     
     CGRect fromViewFrame = self.presentFromViewFrame;
     if ([self isZeroRect:fromViewFrame]) {
-        fromViewFrame = self.fromeViewFrame;
+        fromViewFrame = self.animation_fromeViewFrame;
         fromViewFrame.origin.y = fromViewFrame.size.height - frame.origin.y;
     }
     [self presentAnimation:^(BasePresentViewController *weakSelf) {
         weakSelf.animationView.frame = originFrame;
         if (weakSelf.config.isLinkage) {
-            weakSelf.fromeView.frame = fromViewFrame;
+            weakSelf.animation_fromeView.frame = fromViewFrame;
         }
     } andCompletionBlock:nil];
 }
@@ -212,13 +322,17 @@
     self.animationView.frame = frame;
     CGRect fromeViewFrame = self.presentFromViewFrame;
     if ([self isZeroRect:fromeViewFrame]) {
-        fromeViewFrame = self.fromeViewFrame;
-        fromeViewFrame.origin.x = -CGRectGetMaxX(originFrame);
+        fromeViewFrame = self.animation_fromeViewFrame;
+        
+        fromeViewFrame.origin.x
+        = CGRectGetMinX(originFrame)
+        - CGRectGetWidth(fromeViewFrame)
+        + CGRectGetMinX(fromeViewFrame);
     }
     [self presentAnimation:^(BasePresentViewController *weakSelf) {
         weakSelf.animationView.frame = originFrame;
         if (weakSelf.config.isLinkage) {
-            weakSelf.fromeView.frame = fromeViewFrame;
+            weakSelf.animation_fromeView.frame = fromeViewFrame;
         }
     } andCompletionBlock:nil];
 }
@@ -232,13 +346,13 @@
     
     CGRect fromeViewFrame = self.presentFromViewFrame;
     if ([self isZeroRect:fromeViewFrame]) {
-        fromeViewFrame = self.fromeViewFrame;
+        fromeViewFrame = self.animation_fromeViewFrame;
         fromeViewFrame.origin.y = CGRectGetMaxY(originFrame);
     }
     [self presentAnimation:^(BasePresentViewController *weakSelf) {
         weakSelf.animationView.frame = originFrame;
         if (weakSelf.config.isLinkage) {
-            weakSelf.fromeView.frame = fromeViewFrame;
+            weakSelf.animation_fromeView.frame = fromeViewFrame;
         }
     } andCompletionBlock:nil];
 }
@@ -250,13 +364,13 @@
     self.animationView.frame = frame;
     CGRect fromeViewFrame = self.presentFromViewFrame;
     if ([self isZeroRect:fromeViewFrame]) {
-        fromeViewFrame = self.fromeViewFrame;
+        fromeViewFrame = self.animation_fromeViewFrame;
         fromeViewFrame.origin.x = CGRectGetMaxX(originFrame);
     }
     [self presentAnimation:^(BasePresentViewController *weakSelf) {
         weakSelf.animationView.frame = originFrame;
         if (weakSelf.config.isLinkage) {
-            weakSelf.fromeView.frame = fromeViewFrame;
+            weakSelf.animation_fromeView.frame = fromeViewFrame;
         }
     } andCompletionBlock:nil];
 }
@@ -264,28 +378,41 @@
 // dismiss animation func
 - (void) dismissAnimation:(void(^)(BasePresentViewController *weakSelf))block
        andCompletionBlock:(void(^)(BasePresentViewController *weakSelf))completion {
+    [self dismiss_animationViewShadowAnimation];
+    [self dismissAnimationBeginBlockFunc];
+    
     __weak typeof(self)weakSelf = self;
-     [UIView animateWithDuration:self.config.dismissDuration
-                           delay:self.config.dismissDelayDuration
+    
+    [UIView animateWithDuration:weakSelf.config.dismissDuration
+                           delay:weakSelf.config.dismissDelayDuration
                          options:UIViewAnimationOptionCurveEaseIn
                       animations:
       ^{
-          self.animationView.alpha = self.config.dismissEndAlpha;
+          self.animationView.alpha = weakSelf.config.dismissEndAlpha;
           if (block) {
               block(weakSelf);
           }
-          if (self.dismissAnimatingBlock) {
-              self.dismissAnimatingBlock(self.fromeView, self.animationView);
-          }
+          self.view.backgroundColor = [UIColor colorWithWhite:0 alpha:0];
       } completion:^(BOOL finished) {
-          self.animater.isAccomplishAnima = true;
+          weakSelf.animation_animater.isAccomplishAnima = true;
           if(completion) {
               completion(weakSelf);
           }
-          if (self.dismissAnimatingCompletion) {
-              self.dismissAnimatingCompletion(self.fromeView, self.animationView);
-          }
+          [weakSelf dismissAnimationCompletionFunc];
       }];
+}
+
+- (void) dismissAnimationBeginBlockFunc {
+    if (self.dismissAnimationBeginBlock) {
+        self.dismissAnimationBeginBlock(self.animation_fromeView,
+                                        self.animationView);
+    }
+}
+- (void) dismissAnimationCompletionFunc {
+    if (self.dismissAnimatingCompletion) {
+        self.dismissAnimatingCompletion(self.animation_fromeView,
+                                        self.animationView);
+    }
 }
 
 - (void) dismissZoomAnimation: (UIView *)fromView andToView: (UIView *)toview {
@@ -297,16 +424,16 @@
 - (void) dismissAnimationStyleUp_bottomAnimationFunc {
     CGRect frame = [self getAnimationViewFrame];
     frame.origin.y = self.view.frame.size.height;
-    CGRect toviewFrame = self.fromeViewFrame;
+    CGRect toviewFrame = self.animation_fromeViewFrame;
     if ([self isZeroRect:toviewFrame]) {
-        toviewFrame = self.fromeView.frame;
+        toviewFrame = self.animation_fromeView.frame;
         toviewFrame.origin.y = 0;
     }
     [self dismissAnimation:^(BasePresentViewController *weakSelf) {
         
         weakSelf.animationView.frame = frame;
         if (weakSelf.config.isLinkage) {
-            weakSelf.fromeView.frame = toviewFrame;
+            weakSelf.animation_fromeView.frame = toviewFrame;
         }
     } andCompletionBlock:nil];
 }
@@ -314,16 +441,16 @@
 - (void) dismissAnimationStyleBottom_UpFunc {
     CGRect frame = [self getAnimationViewFrame];
     frame.origin.y = -(frame.size.height);
-    CGRect toviewFrame = self.fromeViewFrame;
+    CGRect toviewFrame = self.animation_fromeViewFrame;
     if ([self isZeroRect:toviewFrame]) {
-        toviewFrame = self.fromeView.frame;
+        toviewFrame = self.animation_fromeView.frame;
         toviewFrame.origin.y = 0;
     }
     [self dismissAnimation:^(BasePresentViewController *weakSelf) {
         
         weakSelf.animationView.frame = frame;
         if (weakSelf.config.isLinkage) {
-            weakSelf.fromeView.frame = toviewFrame;
+            weakSelf.animation_fromeView.frame = toviewFrame;
         }
     } andCompletionBlock:nil];
 }
@@ -332,15 +459,15 @@
     CGRect originFrame = [self getAnimationViewFrame];
     originFrame.origin.x = self.view.frame.size.width;
     
-    CGRect toFrame = self.fromeViewFrame;
+    CGRect toFrame = self.animation_fromeViewFrame;
     if ([self isZeroRect:toFrame]) {
-        toFrame = self.fromeView.frame;
+        toFrame = self.animation_fromeView.frame;
         toFrame.origin.x = 0;
     }
     
     [self dismissAnimation:^(BasePresentViewController *weakSelf) {
         if (weakSelf.config.isLinkage) {
-            weakSelf.fromeView.frame = toFrame;
+            weakSelf.animation_fromeView.frame = toFrame;
         }
         weakSelf.animationView.frame = originFrame;
         
@@ -351,15 +478,15 @@
     CGRect originFrame = [self getAnimationViewFrame];
     originFrame.origin.x = -CGRectGetWidth(originFrame);
     
-    CGRect toFrame = self.fromeViewFrame;
+    CGRect toFrame = self.animation_fromeViewFrame;
     if ([self isZeroRect:toFrame]) {
-        toFrame = self.fromeView.frame;
+        toFrame = self.animation_fromeView.frame;
         toFrame.origin.x = 0;
     }
     
     [self dismissAnimation:^(BasePresentViewController *weakSelf) {
         if (weakSelf.config.isLinkage) {
-            weakSelf.fromeView.frame = toFrame;
+            weakSelf.animation_fromeView.frame = toFrame;
         }
         weakSelf.animationView.frame = originFrame;
         
@@ -391,11 +518,11 @@
 
 
 // MARK: properties get && set
-- (Animater *) animater {
-    if (!_animater) {
-        _animater = [[Animater alloc]initWithModalPresentationStyle:UIModalPresentationCustom];
+- (Animater *) animation_animater {
+    if (!_animation_animater) {
+        _animation_animater = [[Animater alloc]initWithModalPresentationStyle:UIModalPresentationCustom];
     }
-    return _animater;
+    return _animation_animater;
 }
 
 - (BasePresentViewControllerConfiguration *)config {
@@ -406,10 +533,10 @@
 }
 
 - (UIButton *)backgroundButton {
-    if (!_backgroundButton) {
-        _backgroundButton = [UIButton new];
+    if (!_animation_backgroundButton) {
+        _animation_backgroundButton = [UIButton new];
     }
-    return _backgroundButton;
+    return _animation_backgroundButton;
 }
 
 
@@ -435,20 +562,28 @@
     CGFloat x = self.config.presentFromViewX;
     CGFloat y = self.config.presentFromViewY;
     if (x >= 0 || y >= 0) {
-        CGFloat w = self.fromeViewFrame.size.width;
-        CGFloat h = self.fromeViewFrame.size.height;
+        CGFloat w = self.animation_fromeViewFrame.size.width;
+        CGFloat h = self.animation_fromeViewFrame.size.height;
         return CGRectMake(x, y, w, h);
     }
     return CGRectZero;
 }
 
-- (void) presetionAnimating:(void (^)(UIView *, UIView *))block andCompletion:(void (^)(UIView *, UIView *))completion{
-    self.presetionAnimatingBlock = block;
+- (void) presentAnimationBegin:(void (^)(UIView *, UIView *))block andCompletion:(void (^)(UIView *, UIView *))completion{
+    self.presetionAnimationBeginBlock = block;
     self.presentAnimatingCompletion = completion;
 }
 
-- (void) dismissAnimating:(void (^)(UIView *, UIView *))block andCompletion:(void (^)(UIView *, UIView *))completion{
-    self.dismissAnimatingBlock = block;
+- (void) dismissAnimationBegin:(void (^)(UIView *, UIView *))block andCompletion:(void (^)(UIView *, UIView *))completion{
+    self.dismissAnimationBeginBlock = block;
     self.dismissAnimatingCompletion = completion;
+}
+
+- (void) presentBeginBasicAnimation: (BasicAnimationBlock) present {
+    self.presentBeginBasicAnimationBlock = present;
+}
+
+- (void) dismissBeginBasicAnimation: (BasicAnimationBlock) dismiss {
+    self.dismissBeginBasicAnimationBlock = dismiss;
 }
 @end

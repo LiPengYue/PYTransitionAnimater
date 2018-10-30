@@ -23,7 +23,7 @@
 		71719F9F1E33DC2100824A3D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 71719F9D1E33DC2100824A3D /* LaunchScreen.storyboard */; };
 		86C299D32186A47A0046B8EA /* PYModalViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 86C299D22186A47A0046B8EA /* PYModalViewController.m */; };
 		873B8AEB1B1F5CCA007FD442 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 873B8AEA1B1F5CCA007FD442 /* Main.storyboard */; };
-		ABCEC69191E34E4E14EF5828 /* Pods_PYTransitionAnimater_Example.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3C8709F1A9D404E659A80CB7 /* Pods_PYTransitionAnimater_Example.framework */; };
+		ABCEC69191E34E4E14EF5828 /* Pods_PYTransitionAnimater_Example.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3C8709F1A9D404E659A80CB7 /* Pods_PYTransitionAnimater_Example.framework */; settings = {ATTRIBUTES = (Required, ); }; };
 		EBA6D326749C23557617E18F /* Pods_PYTransitionAnimater_Tests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BA72A2AAF4D0195BBA70ECFB /* Pods_PYTransitionAnimater_Tests.framework */; };
 /* End PBXBuildFile section */
 
@@ -253,6 +253,9 @@
 				LastUpgradeCheck = 0720;
 				ORGANIZATIONNAME = LiPengYue;
 				TargetAttributes = {
+					6003F589195388D20070C39A = {
+						DevelopmentTeam = W7835H6QQA;
+					};
 					6003F5AD195388D20070C39A = {
 						TestTargetID = 6003F589195388D20070C39A;
 					};
@@ -510,6 +513,7 @@
 			baseConfigurationReference = 970D5DCA28C22A6458B2DF68 /* Pods-PYTransitionAnimater_Example.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = W7835H6QQA;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "PYTransitionAnimater/PYTransitionAnimater-Prefix.pch";
 				INFOPLIST_FILE = "PYTransitionAnimater/PYTransitionAnimater-Info.plist";
@@ -525,6 +529,7 @@
 			baseConfigurationReference = 899DF9E974C8A650C11F1128 /* Pods-PYTransitionAnimater_Example.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = W7835H6QQA;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "PYTransitionAnimater/PYTransitionAnimater-Prefix.pch";
 				INFOPLIST_FILE = "PYTransitionAnimater/PYTransitionAnimater-Info.plist";

@@ -13,17 +13,30 @@
 {
     self = [super init];
     if (self) {
-        self.presentDuration = 0.3;
-        self.dismissDuration = 0.3;
+        self.presentDuration = 0.4;
+        self.dismissDuration = 0.4;
         self.presentDelayDuration = 0;
         self.dismissDelayDuration = 0;
+        
         self.presentStyle = PresentAnimationStyleNull;
         self.dismissStyle = DismissAnimationStyleNull;
+       
         self.backgroundColor = [UIColor colorWithWhite:0 alpha:0.3];
+        
         self.presentAnimationOptions = UIViewAnimationOptionCurveEaseInOut;
         self.dismissAnimationOptions = UIViewAnimationOptionCurveEaseInOut;
+        
         self.presentFromViewY = -1;
         self.presentFromViewX = -1;
+        
+        self.presentShadowOpacity = 1;
+        self.presentShadowColor = [UIColor colorWithWhite:0 alpha:0.06];
+        
+        self.dismissShadowOpacity = 1;
+        self.dismissShadowColor = [UIColor colorWithWhite:0 alpha:0];
+        
+        self.presentStartAlpha = 1;
+        self.dismissEndAlpha = 1;
     }
     return self;
 }
@@ -109,6 +122,42 @@
 - (BasePresentViewControllerConfiguration *(^)(CGFloat y)) setUpPresentFromViewY {
     return ^(CGFloat y) {
         self.presentFromViewY = y;
+        return self;
+    };
+}
+- (BasePresentViewControllerConfiguration *(^)(CGSize size)) setUpPresentShadowOffset {
+    return ^(CGSize size) {
+        self.presentShadowOffset = size;
+        return self;
+    };
+}
+- (BasePresentViewControllerConfiguration *(^)(CGFloat opacity)) setUpPresentShadowOpacity {
+    return ^(CGFloat opacity) {
+        self.presentShadowOpacity = opacity;
+        return self;
+    };
+}
+- (BasePresentViewControllerConfiguration *(^)(CGSize size)) setUpDismissShadowOffset {
+    return ^(CGSize size) {
+        self.dismissShadowOffset = size;
+        return self;
+    };
+}
+- (BasePresentViewControllerConfiguration *(^)(CGFloat opacity)) setUpDismissShadowOpacity {
+    return ^(CGFloat opacity) {
+        self.dismissShadowOpacity = opacity;
+        return self;
+    };
+}
+- (BasePresentViewControllerConfiguration *(^)(UIColor *color)) setUpPresentShadowColor {
+    return ^(UIColor *color) {
+        self.presentShadowColor = color;
+        return self;
+    };
+}
+- (BasePresentViewControllerConfiguration *(^)(UIColor *color)) setUpDismissShadowColor {
+    return ^(UIColor *color) {
+        self.dismissShadowColor = color;
         return self;
     };
 }

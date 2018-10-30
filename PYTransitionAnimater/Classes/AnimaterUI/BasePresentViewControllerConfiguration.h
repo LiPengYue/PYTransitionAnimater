@@ -193,6 +193,42 @@ typedef struct {
  */
 - (BasePresentViewControllerConfiguration *(^)(CGFloat y)) setUpPresentFromViewY;
 @property (nonatomic,assign) CGFloat presentFromViewY;
+
+
+/**
+ present 时候 animationView 的 阴影动画 offset
+ */
+- (BasePresentViewControllerConfiguration *(^)(CGSize size)) setUpPresentShadowOffset;
+@property (nonatomic,assign) CGSize presentShadowOffset;
+/**
+ present 时候 animationView 的 阴影 透明度 动画
+ */
+- (BasePresentViewControllerConfiguration *(^)(CGFloat opacity)) setUpPresentShadowOpacity;
+@property (nonatomic,assign) CGFloat presentShadowOpacity;
+/**
+ dismiss 时候 animationView 的 阴影动画 offset
+ */
+- (BasePresentViewControllerConfiguration *(^)(CGSize size)) setUpDismissShadowOffset;
+@property (nonatomic,assign) CGSize dismissShadowOffset;
+
+/**
+ dismiss 时候 animationView 的 阴影 透明度 动画
+ */
+- (BasePresentViewControllerConfiguration *(^)(CGFloat opacity)) setUpDismissShadowOpacity;
+@property (nonatomic,assign) CGFloat dismissShadowOpacity;
+
+/**
+ present 时候 animationView 的 阴影 color 动画
+ */
+- (BasePresentViewControllerConfiguration *(^)(UIColor *color)) setUpPresentShadowColor;
+@property (nonatomic,strong) UIColor *presentShadowColor;
+
+/**
+ dismiss 时候 animationView 的 阴影 color 动画
+ */
+- (BasePresentViewControllerConfiguration *(^)(UIColor *color)) setUpDismissShadowColor;
+@property (nonatomic,strong) UIColor *dismissShadowColor;
+
 @end
 
 

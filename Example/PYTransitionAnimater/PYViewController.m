@@ -7,23 +7,48 @@
 //
 
 #import "PYViewController.h"
-
+#import "PYModalViewController.h"
 @interface PYViewController ()
-
+@property (nonatomic,strong) UIImageView *button;
 @end
 
 @implementation PYViewController
 
-- (void)viewDidLoad
-{
+- (void)viewDidLoad {
     [super viewDidLoad];
-	// Do any additional setup after loading the view, typically from a nib.
+    self.button.frame = self.view.bounds;
+    [self.view addSubview:self.button];
 }
 
-- (void)didReceiveMemoryWarning
-{
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
+- (UIImageView *)button {
+    if (!_button) {
+        _button = [UIImageView new];
+        _button.image = [UIImage imageNamed:@"2"];
+        _button.userInteractionEnabled = true;
+        _button.backgroundColor = [UIColor blueColor];
+        UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc]initWithTarget:self action:@selector(click)];
+        [_button addGestureRecognizer:tap];
+    }
+    return _button;
 }
+- (void) click {
 
+    PYModalViewController *vc = [PYModalViewController new];
+    
+    [self presentViewController:vc animated:true completion:nil];
+    
+    [vc willDismissFunc: ^ BOOL(BasePresentViewController *presentVC) {
+        NSLog(@"1willDismissFunc");
+        return true;
+    }];
+    
+    [vc didDismissFunc:^(BasePresentViewController *presentVC) {
+        NSLog(@"2didDismissFunc");
+    }];
+    
+    [vc clickBackgroundButtonFunc:^BOOL(BasePresentViewController *presentVC) {
+        NSLog(@"3clickBackgroundButtonFunc");
+        return true;
+    }];
+}
 @end

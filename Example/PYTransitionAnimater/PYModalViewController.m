@@ -9,47 +9,48 @@
 #import "PYModalViewController.h"
 
 @interface PYModalViewController ()
-@property (nonatomic,strong) UIButton *button;
+@property (nonatomic,strong) UIImageView *button;
+
 @end
 
 @implementation PYModalViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    
-    //    self.config.presentStyle = PresentAnimationStyleRight_left;
-    //    self.config.dismissStyle = DismissAnimationStyleLeft_Right;
-    //    self.config.presentDuration = 0.2;
-    //    self.config.dismissDuration = 0.4;
-    //    self.config.presentFromViewX = 110;
-    //    self.config.isLinkage = true;
-    
+ 
     self.config
-    .setUpPresentStyle(PresentAnimationStyleLeft_right)
-    .setUpDismissStyle(DismissAnimationStyleRight_Left)
-    .setUpPresentDuration(0.2)
-    .setUpDismissDuration(0.4)
-    //    .setUpPresentFromViewX(110)
-    //    .setUpPresentFromViewY(1000)
-    .setUpIsLinkage(true);
+    .setUpPresentStyle(PresentAnimationStyleRight_left)
+    .setUpDismissStyle(DismissAnimationStyleLeft_Right)
+    .setUpIsLinkage(true)
+    
+    //shadow
+    .setUpDismissShadowOpacity(0)
+    .setUpDismissShadowColor([UIColor colorWithWhite:0 alpha:0])
+    .setUpPresentShadowColor([UIColor redColor])
+    .setUpDismissShadowOffset(CGSizeMake(1, 1))
+    .setUpPresentShadowOffset(CGSizeMake(-10, 10));
     
     self.animationView = self.button;
+
     [self.view addSubview: self.button];
-    [self.button mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.left.top.equalTo(self.view).offset(120);
-        make.right.bottom.equalTo(self.view).offset(-120);
-        
-    }];
-    //    self.button.frame = CGRectMake(110, 110, 200, 200);
+    self.button.frame = CGRectMake(110, 0, self.view.frame.size.width - 110, self.view.frame.size.height);
+    
+   
 }
 
-- (UIButton *)button {
+- (UIImageView *)button {
     if (!_button) {
-        _button = [UIButton new];
+        _button = [UIImageView new];
+        _button.image = [UIImage imageNamed:@"1"];
+        _button.userInteractionEnabled = true;
         _button.backgroundColor = [UIColor blueColor];
-        [_button setBackgroundImage:[UIImage imageNamed:@"2"] forState:UIControlStateNormal];
+        UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc]initWithTarget:self action:@selector(click)];
+        [_button addGestureRecognizer:tap];
     }
     return _button;
+}
+- (void) click {
+    [self dismissViewControllerAnimated:true completion:nil];
 }
 
 - (void)dealloc {
