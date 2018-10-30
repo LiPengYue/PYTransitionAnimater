@@ -229,6 +229,10 @@ typedef struct {
 - (BasePresentViewControllerConfiguration *(^)(UIColor *color)) setUpDismissShadowColor;
 @property (nonatomic,strong) UIColor *dismissShadowColor;
 
+
+/**
+ 阴影的边缘的模糊程度
+ */
 @end
 
 

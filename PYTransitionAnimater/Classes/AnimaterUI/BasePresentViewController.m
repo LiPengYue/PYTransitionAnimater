@@ -78,7 +78,7 @@
     __weak typeof(self) weakSelf = self;
     
     [self.animation_animater setupContainerViewWithBlock:^(UIView *containerView) {
-        _containerView = containerView;
+        [weakSelf setValue:containerView forKey:@"containerView"];
     }];
     
     [self.animation_animater presentAnimaWithBlock:^(UIViewController *toVC, UIViewController *fromVC, UIView *toView, UIView *fromView) {
