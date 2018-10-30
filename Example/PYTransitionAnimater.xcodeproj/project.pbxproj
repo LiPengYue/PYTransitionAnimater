@@ -61,7 +61,7 @@
 		6003F5BB195388D20070C39A /* Tests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Tests.m; sourceTree = "<group>"; };
 		606FC2411953D9B200FFA9A0 /* Tests-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Tests-Prefix.pch"; sourceTree = "<group>"; };
 		71719F9E1E33DC2100824A3D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
-		73D007C4EEE1533A5D720ABA /* PYTransitionAnimater.podspec */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = PYTransitionAnimater.podspec; path = ../PYTransitionAnimater.podspec; sourceTree = "<group>"; };
+		73D007C4EEE1533A5D720ABA /* PYTransitionAnimater.podspec */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = PYTransitionAnimater.podspec; path = ../PYTransitionAnimater.podspec; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		86C299D12186A47A0046B8EA /* PYModalViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PYModalViewController.h; sourceTree = "<group>"; };
 		86C299D22186A47A0046B8EA /* PYModalViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PYModalViewController.m; sourceTree = "<group>"; };
 		873B8AEA1B1F5CCA007FD442 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = Main.storyboard; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
