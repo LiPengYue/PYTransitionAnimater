@@ -7,11 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		089FF1EFE1C4817EC268B7233457AFCB /* BasePresentViewControllerConfiguration.h in Headers */ = {isa = PBXBuildFile; fileRef = 8081429796E6082BCC10F464E2D77D8A /* BasePresentViewControllerConfiguration.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		163DC390363C339936B3114C72FE6716 /* SwiftSupport.swift in Sources */ = {isa = PBXBuildFile; fileRef = D97545C39C4A5EE2631DD9FFECE76A40 /* SwiftSupport.swift */; };
 		1E9942DE58598B888DDCA1DFABE19530 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C1A94602875A48A997AD3F08A33E6EAA /* Foundation.framework */; };
 		22774524C97387E8DA85FC1A0E09706C /* Pods-PYTransitionAnimater_Tests-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 9534526F4218DB47486AE558D732B354 /* Pods-PYTransitionAnimater_Tests-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		23919D2612C29C36475779855B1C4329 /* BasePresentViewController.h in Headers */ = {isa = PBXBuildFile; fileRef = DE423CFBD761AC34F4A81C1AE38F20CE /* BasePresentViewController.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		293F9960B08003218B222D258FE77581 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D77B07CA7D221E3EC46B93C00BF37CDE /* QuartzCore.framework */; };
 		320A65879FEBA037AE3F5EA53F49D34E /* Animater.h in Headers */ = {isa = PBXBuildFile; fileRef = CD12AA10037AD7D9E6078192A15FAF04 /* Animater.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		387D066A1A34ED7DF0F716CB3A8B746D /* UIImage+Snapshot.h in Headers */ = {isa = PBXBuildFile; fileRef = 0B161931541BFE46DFEA2092EDDDA815 /* UIImage+Snapshot.h */; settings = {ATTRIBUTES = (Private, ); }; };
@@ -23,24 +21,50 @@
 		4DA753D5E2E5213BD0559A7BA1825E6D /* Pods-PYTransitionAnimater_Example-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 53EA9B1F74A6629AFBA76D5BCE5DE3D0 /* Pods-PYTransitionAnimater_Example-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		4F7BD484FB402A43887E35E364F04D94 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C1A94602875A48A997AD3F08A33E6EAA /* Foundation.framework */; };
 		50437A2CDBDAF03F0A88588A5F4EA656 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C1A94602875A48A997AD3F08A33E6EAA /* Foundation.framework */; };
-		599D39E0835031D7852EFB0B8B1B549A /* BaseAnimaterHeaders.h in Headers */ = {isa = PBXBuildFile; fileRef = 34579180B9BD0EBA2F0AEDE702675EDF /* BaseAnimaterHeaders.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		59FD5FAEFCF13CD39358A6F36C50BED8 /* FBSnapshotTestController.h in Headers */ = {isa = PBXBuildFile; fileRef = 1374B79237CAC07693E99442FBED1F15 /* FBSnapshotTestController.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		63EA4B9CBBAB30A69C2D73693019FDC5 /* UIImage+Compare.h in Headers */ = {isa = PBXBuildFile; fileRef = 432938111B6FF0189EFFEDF2F845B308 /* UIImage+Compare.h */; settings = {ATTRIBUTES = (Private, ); }; };
 		6B71ACB6D56B970D0B2AD8EE2B79D96F /* FBSnapshotTestCasePlatform.m in Sources */ = {isa = PBXBuildFile; fileRef = 58A2557E7CE20AACCD1B28B1CD1F920D /* FBSnapshotTestCasePlatform.m */; };
 		6EC17B6986CC7F9EBDF0521AE86F371B /* FBSnapshotTestCase.m in Sources */ = {isa = PBXBuildFile; fileRef = 39577E2B806B8B2D019998DE60728F63 /* FBSnapshotTestCase.m */; };
-		70D6A3D86F0D8524262CED416735C452 /* BasePresentNavigationController.h in Headers */ = {isa = PBXBuildFile; fileRef = CA3630CF630908E8C97D04F5172E9534 /* BasePresentNavigationController.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		73247510D7AD93E5FDBA474B353BF919 /* UIImage+Diff.h in Headers */ = {isa = PBXBuildFile; fileRef = 85E250EF19C5B5671AEC10BEB508D087 /* UIImage+Diff.h */; settings = {ATTRIBUTES = (Private, ); }; };
+		86416BFF2189BDB800232853 /* BaseAnimaterHeaders.h in Headers */ = {isa = PBXBuildFile; fileRef = 86416BF72189BDB700232853 /* BaseAnimaterHeaders.h */; };
+		86416C002189BDB800232853 /* BaseAnimaterHeaders.h in Headers */ = {isa = PBXBuildFile; fileRef = 86416BF72189BDB700232853 /* BaseAnimaterHeaders.h */; };
+		86416C012189BDB800232853 /* BaseAnimaterHeaders.h in Headers */ = {isa = PBXBuildFile; fileRef = 86416BF72189BDB700232853 /* BaseAnimaterHeaders.h */; };
+		86416C022189BDB800232853 /* BaseAnimaterHeaders.h in Headers */ = {isa = PBXBuildFile; fileRef = 86416BF72189BDB700232853 /* BaseAnimaterHeaders.h */; };
+		86416C032189BDB800232853 /* BasePresentNavigationController.h in Headers */ = {isa = PBXBuildFile; fileRef = 86416BF82189BDB700232853 /* BasePresentNavigationController.h */; };
+		86416C042189BDB800232853 /* BasePresentNavigationController.h in Headers */ = {isa = PBXBuildFile; fileRef = 86416BF82189BDB700232853 /* BasePresentNavigationController.h */; };
+		86416C052189BDB800232853 /* BasePresentNavigationController.h in Headers */ = {isa = PBXBuildFile; fileRef = 86416BF82189BDB700232853 /* BasePresentNavigationController.h */; };
+		86416C062189BDB800232853 /* BasePresentNavigationController.h in Headers */ = {isa = PBXBuildFile; fileRef = 86416BF82189BDB700232853 /* BasePresentNavigationController.h */; };
+		86416C072189BDB800232853 /* BasePresentNavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = 86416BF92189BDB700232853 /* BasePresentNavigationController.m */; };
+		86416C082189BDB800232853 /* BasePresentNavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = 86416BF92189BDB700232853 /* BasePresentNavigationController.m */; };
+		86416C092189BDB800232853 /* BasePresentNavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = 86416BF92189BDB700232853 /* BasePresentNavigationController.m */; };
+		86416C0A2189BDB800232853 /* BasePresentNavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = 86416BF92189BDB700232853 /* BasePresentNavigationController.m */; };
+		86416C0B2189BDB800232853 /* BasePresentViewController.h in Headers */ = {isa = PBXBuildFile; fileRef = 86416BFA2189BDB700232853 /* BasePresentViewController.h */; };
+		86416C0C2189BDB800232853 /* BasePresentViewController.h in Headers */ = {isa = PBXBuildFile; fileRef = 86416BFA2189BDB700232853 /* BasePresentViewController.h */; };
+		86416C0D2189BDB800232853 /* BasePresentViewController.h in Headers */ = {isa = PBXBuildFile; fileRef = 86416BFA2189BDB700232853 /* BasePresentViewController.h */; };
+		86416C0E2189BDB800232853 /* BasePresentViewController.h in Headers */ = {isa = PBXBuildFile; fileRef = 86416BFA2189BDB700232853 /* BasePresentViewController.h */; };
+		86416C0F2189BDB800232853 /* BaseAnimaterHeaders.m in Sources */ = {isa = PBXBuildFile; fileRef = 86416BFB2189BDB700232853 /* BaseAnimaterHeaders.m */; };
+		86416C102189BDB800232853 /* BaseAnimaterHeaders.m in Sources */ = {isa = PBXBuildFile; fileRef = 86416BFB2189BDB700232853 /* BaseAnimaterHeaders.m */; };
+		86416C112189BDB800232853 /* BaseAnimaterHeaders.m in Sources */ = {isa = PBXBuildFile; fileRef = 86416BFB2189BDB700232853 /* BaseAnimaterHeaders.m */; };
+		86416C122189BDB800232853 /* BaseAnimaterHeaders.m in Sources */ = {isa = PBXBuildFile; fileRef = 86416BFB2189BDB700232853 /* BaseAnimaterHeaders.m */; };
+		86416C132189BDB800232853 /* BasePresentViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 86416BFC2189BDB700232853 /* BasePresentViewController.m */; };
+		86416C142189BDB800232853 /* BasePresentViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 86416BFC2189BDB700232853 /* BasePresentViewController.m */; };
+		86416C152189BDB800232853 /* BasePresentViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 86416BFC2189BDB700232853 /* BasePresentViewController.m */; };
+		86416C162189BDB800232853 /* BasePresentViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 86416BFC2189BDB700232853 /* BasePresentViewController.m */; };
+		86416C172189BDB800232853 /* BasePresentViewControllerConfiguration.m in Sources */ = {isa = PBXBuildFile; fileRef = 86416BFD2189BDB700232853 /* BasePresentViewControllerConfiguration.m */; };
+		86416C182189BDB800232853 /* BasePresentViewControllerConfiguration.m in Sources */ = {isa = PBXBuildFile; fileRef = 86416BFD2189BDB700232853 /* BasePresentViewControllerConfiguration.m */; };
+		86416C192189BDB800232853 /* BasePresentViewControllerConfiguration.m in Sources */ = {isa = PBXBuildFile; fileRef = 86416BFD2189BDB700232853 /* BasePresentViewControllerConfiguration.m */; };
+		86416C1A2189BDB800232853 /* BasePresentViewControllerConfiguration.m in Sources */ = {isa = PBXBuildFile; fileRef = 86416BFD2189BDB700232853 /* BasePresentViewControllerConfiguration.m */; };
+		86416C1B2189BDB800232853 /* BasePresentViewControllerConfiguration.h in Headers */ = {isa = PBXBuildFile; fileRef = 86416BFE2189BDB800232853 /* BasePresentViewControllerConfiguration.h */; };
+		86416C1C2189BDB800232853 /* BasePresentViewControllerConfiguration.h in Headers */ = {isa = PBXBuildFile; fileRef = 86416BFE2189BDB800232853 /* BasePresentViewControllerConfiguration.h */; };
+		86416C1D2189BDB800232853 /* BasePresentViewControllerConfiguration.h in Headers */ = {isa = PBXBuildFile; fileRef = 86416BFE2189BDB800232853 /* BasePresentViewControllerConfiguration.h */; };
+		86416C1E2189BDB800232853 /* BasePresentViewControllerConfiguration.h in Headers */ = {isa = PBXBuildFile; fileRef = 86416BFE2189BDB800232853 /* BasePresentViewControllerConfiguration.h */; };
 		9E45BEFE59B02FE7B91A464A4915D65C /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E7843C520ED7D11392D872D57034A1BC /* XCTest.framework */; };
 		A0DF9EB62EEAFF26873AE9A7FA9577D3 /* AnimatedTransition.h in Headers */ = {isa = PBXBuildFile; fileRef = 45C74A2BA36390D1C388B89E304CF8A9 /* AnimatedTransition.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		AAB3147737C741341BD5966D1B6C17D6 /* BasePresentViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AC6F696735EAB3129E3A9481A716C544 /* BasePresentViewController.m */; };
 		AFF108D6E8D891F7B8148CA0158B2A23 /* UIApplication+StrictKeyWindow.m in Sources */ = {isa = PBXBuildFile; fileRef = 2EECE81A9AEC1ED1057A9C3C88DBCEBE /* UIApplication+StrictKeyWindow.m */; };
 		B08725BB938AA3AACCA3C8C818FA4CF6 /* FBSnapshotTestCase.h in Headers */ = {isa = PBXBuildFile; fileRef = E37899BD4B349060AA147E2A3721D3A2 /* FBSnapshotTestCase.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		B6C56DF6AD421DD705401AE57DB0AEBE /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C1A94602875A48A997AD3F08A33E6EAA /* Foundation.framework */; };
-		B76342693C11A259133782D8DC05CCD0 /* BaseAnimaterHeaders.m in Sources */ = {isa = PBXBuildFile; fileRef = DB2969088E61B07D27FC39B2CC0AAD5B /* BaseAnimaterHeaders.m */; };
 		B821B69E5EBD7C7D45A90A51AB1A94E3 /* AnimatedTransition.m in Sources */ = {isa = PBXBuildFile; fileRef = 117D0FAACDD1BAF9F45C1BEC7C720E36 /* AnimatedTransition.m */; };
-		B95DB987D1C3DA5332FCF5CE174CE053 /* BasePresentViewControllerConfiguration.m in Sources */ = {isa = PBXBuildFile; fileRef = 9CF59429506AC316387AC48948EFBBC9 /* BasePresentViewControllerConfiguration.m */; };
 		BCDA265400AF5BCF21074C5AF1FD09A8 /* UIApplication+StrictKeyWindow.h in Headers */ = {isa = PBXBuildFile; fileRef = B9109B8B333B5A1A3E92EFC09EDC10AC /* UIApplication+StrictKeyWindow.h */; settings = {ATTRIBUTES = (Project, ); }; };
-		BD0149CA170C7B1F818196CA8B628C4A /* BasePresentNavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = 807685DE98B47B82AC863777B7FCAE59 /* BasePresentNavigationController.m */; };
 		C7CE4CD0EDCEEECE7722D1FFB2159F9D /* ReplaceMe.m in Sources */ = {isa = PBXBuildFile; fileRef = DBF6F8923B9C46893C50F086548C27B6 /* ReplaceMe.m */; };
 		CBE51DB99413F42173EB12405A00E60A /* PYTransitionAnimater-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = AFA833769CCB66D190BC6E7DBAD1B4A5 /* PYTransitionAnimater-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		E2E2BC984CCC1978CB9E22B72258C641 /* FBSnapshotTestController.m in Sources */ = {isa = PBXBuildFile; fileRef = 052258A488A96C35531FAC73C4F42924 /* FBSnapshotTestController.m */; };
@@ -77,7 +101,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		01A160FB2F9C4F8677692A3FC6CF196A /* FBSnapshotTestCase.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = FBSnapshotTestCase.framework; path = FBSnapshotTestCase.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		01A160FB2F9C4F8677692A3FC6CF196A /* FBSnapshotTestCase.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = FBSnapshotTestCase.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		03447B946C898B41CD1A87D1E3D3C0BF /* Pods-PYTransitionAnimater_Tests-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-PYTransitionAnimater_Tests-resources.sh"; sourceTree = "<group>"; };
 		052258A488A96C35531FAC73C4F42924 /* FBSnapshotTestController.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = FBSnapshotTestController.m; path = FBSnapshotTestCase/FBSnapshotTestController.m; sourceTree = "<group>"; };
 		05E538011455B7FF7E2D002A316E9437 /* Pods-PYTransitionAnimater_Tests-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-PYTransitionAnimater_Tests-acknowledgements.markdown"; sourceTree = "<group>"; };
@@ -85,17 +109,16 @@
 		0D792629FF83BB1AB90C51A2AE2D18F6 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		117D0FAACDD1BAF9F45C1BEC7C720E36 /* AnimatedTransition.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = AnimatedTransition.m; sourceTree = "<group>"; };
 		1374B79237CAC07693E99442FBED1F15 /* FBSnapshotTestController.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = FBSnapshotTestController.h; path = FBSnapshotTestCase/FBSnapshotTestController.h; sourceTree = "<group>"; };
-		1A8F7CE2DF50A5837B496398052982E5 /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; path = README.md; sourceTree = "<group>"; };
+		1A8F7CE2DF50A5837B496398052982E5 /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		1B4F9910C450C49A9B029E3949C6BA23 /* Pods-PYTransitionAnimater_Tests-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-PYTransitionAnimater_Tests-acknowledgements.plist"; sourceTree = "<group>"; };
 		1E81A3F3BA46A3756EB467EC143A9EE8 /* Pods-PYTransitionAnimater_Example-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-PYTransitionAnimater_Example-dummy.m"; sourceTree = "<group>"; };
 		2EECE81A9AEC1ED1057A9C3C88DBCEBE /* UIApplication+StrictKeyWindow.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "UIApplication+StrictKeyWindow.m"; path = "FBSnapshotTestCase/Categories/UIApplication+StrictKeyWindow.m"; sourceTree = "<group>"; };
-		31992C71F0534EED8BF32423377B821C /* Pods_PYTransitionAnimater_Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_PYTransitionAnimater_Tests.framework; path = "Pods-PYTransitionAnimater_Tests.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
+		31992C71F0534EED8BF32423377B821C /* Pods_PYTransitionAnimater_Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_PYTransitionAnimater_Tests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		343A62A3DFEA79F90D4C0015EC90586C /* Pods-PYTransitionAnimater_Example.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "Pods-PYTransitionAnimater_Example.modulemap"; sourceTree = "<group>"; };
-		34579180B9BD0EBA2F0AEDE702675EDF /* BaseAnimaterHeaders.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = BaseAnimaterHeaders.h; sourceTree = "<group>"; };
-		36DDEA2835594D94F31577D03C05B656 /* PYTransitionAnimater.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = PYTransitionAnimater.framework; path = PYTransitionAnimater.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		36DDEA2835594D94F31577D03C05B656 /* PYTransitionAnimater.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = PYTransitionAnimater.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		39577E2B806B8B2D019998DE60728F63 /* FBSnapshotTestCase.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = FBSnapshotTestCase.m; path = FBSnapshotTestCase/FBSnapshotTestCase.m; sourceTree = "<group>"; };
 		3B5E22F9517F21D3A0251F88FCAB281E /* UIImage+Compare.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "UIImage+Compare.m"; path = "FBSnapshotTestCase/Categories/UIImage+Compare.m"; sourceTree = "<group>"; };
-		3C577C0A2012B7F2FC0E7FB231CCA8F9 /* PYTransitionAnimater.podspec */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; lastKnownFileType = text; path = PYTransitionAnimater.podspec; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		3C577C0A2012B7F2FC0E7FB231CCA8F9 /* PYTransitionAnimater.podspec */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; path = PYTransitionAnimater.podspec; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		3DBFBDCC891B770A2AC9EF0FB164B751 /* UIImage+Snapshot.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "UIImage+Snapshot.m"; path = "FBSnapshotTestCase/Categories/UIImage+Snapshot.m"; sourceTree = "<group>"; };
 		432938111B6FF0189EFFEDF2F845B308 /* UIImage+Compare.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "UIImage+Compare.h"; path = "FBSnapshotTestCase/Categories/UIImage+Compare.h"; sourceTree = "<group>"; };
 		45C74A2BA36390D1C388B89E304CF8A9 /* AnimatedTransition.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = AnimatedTransition.h; sourceTree = "<group>"; };
@@ -106,41 +129,42 @@
 		587BFBF9714434DE61C713BF16493232 /* Pods-PYTransitionAnimater_Tests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-PYTransitionAnimater_Tests.release.xcconfig"; sourceTree = "<group>"; };
 		587DEB5F3E5BB72895614798AF32544B /* PYTransitionAnimater-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "PYTransitionAnimater-dummy.m"; sourceTree = "<group>"; };
 		58A2557E7CE20AACCD1B28B1CD1F920D /* FBSnapshotTestCasePlatform.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = FBSnapshotTestCasePlatform.m; path = FBSnapshotTestCase/FBSnapshotTestCasePlatform.m; sourceTree = "<group>"; };
-		5E9D0F3F0AE76C09176E372FCD024AC5 /* Pods_PYTransitionAnimater_Example.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_PYTransitionAnimater_Example.framework; path = "Pods-PYTransitionAnimater_Example.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
+		5E9D0F3F0AE76C09176E372FCD024AC5 /* Pods_PYTransitionAnimater_Example.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_PYTransitionAnimater_Example.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		5F9904BC2CA017ABFBE1541104A0AE30 /* Pods-PYTransitionAnimater_Example.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-PYTransitionAnimater_Example.release.xcconfig"; sourceTree = "<group>"; };
 		63D1503F1818A94836DCDFF5FC31844B /* Animater.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = Animater.m; sourceTree = "<group>"; };
 		67E276593855381568F725E69496F29C /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		765B4B68C805E53275F318728B1C293E /* PYTransitionAnimater-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "PYTransitionAnimater-prefix.pch"; sourceTree = "<group>"; };
 		7B37D7C695D5C6C47A7C093595CD4F06 /* FBSnapshotTestCase.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = FBSnapshotTestCase.xcconfig; sourceTree = "<group>"; };
 		7E3DB4D092B985E76E227F7F313C6981 /* FBSnapshotTestCasePlatform.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = FBSnapshotTestCasePlatform.h; path = FBSnapshotTestCase/FBSnapshotTestCasePlatform.h; sourceTree = "<group>"; };
-		807685DE98B47B82AC863777B7FCAE59 /* BasePresentNavigationController.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = BasePresentNavigationController.m; sourceTree = "<group>"; };
-		8081429796E6082BCC10F464E2D77D8A /* BasePresentViewControllerConfiguration.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = BasePresentViewControllerConfiguration.h; sourceTree = "<group>"; };
 		84DBBB0BB8D4DBA8733179FAB22D54C3 /* Pods-PYTransitionAnimater_Tests.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "Pods-PYTransitionAnimater_Tests.modulemap"; sourceTree = "<group>"; };
 		85E250EF19C5B5671AEC10BEB508D087 /* UIImage+Diff.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "UIImage+Diff.h"; path = "FBSnapshotTestCase/Categories/UIImage+Diff.h"; sourceTree = "<group>"; };
+		86416BF72189BDB700232853 /* BaseAnimaterHeaders.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BaseAnimaterHeaders.h; sourceTree = "<group>"; };
+		86416BF82189BDB700232853 /* BasePresentNavigationController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BasePresentNavigationController.h; sourceTree = "<group>"; };
+		86416BF92189BDB700232853 /* BasePresentNavigationController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BasePresentNavigationController.m; sourceTree = "<group>"; };
+		86416BFA2189BDB700232853 /* BasePresentViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BasePresentViewController.h; sourceTree = "<group>"; };
+		86416BFB2189BDB700232853 /* BaseAnimaterHeaders.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BaseAnimaterHeaders.m; sourceTree = "<group>"; };
+		86416BFC2189BDB700232853 /* BasePresentViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BasePresentViewController.m; sourceTree = "<group>"; };
+		86416BFD2189BDB700232853 /* BasePresentViewControllerConfiguration.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BasePresentViewControllerConfiguration.m; sourceTree = "<group>"; };
+		86416BFE2189BDB800232853 /* BasePresentViewControllerConfiguration.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BasePresentViewControllerConfiguration.h; sourceTree = "<group>"; };
 		8AC49E6EAB2C94E9B80C746584F82150 /* Pods-PYTransitionAnimater_Example-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-PYTransitionAnimater_Example-acknowledgements.plist"; sourceTree = "<group>"; };
 		8D917E99B59071614D0DAC06B7983FE3 /* Pods-PYTransitionAnimater_Tests-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-PYTransitionAnimater_Tests-frameworks.sh"; sourceTree = "<group>"; };
 		8E27A969463425ACBC0DCDBD7DB63EE5 /* Pods-PYTransitionAnimater_Example-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-PYTransitionAnimater_Example-resources.sh"; sourceTree = "<group>"; };
-		919D1C29F6262C5FD053BAFBBCDF9A4D /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; path = LICENSE; sourceTree = "<group>"; };
-		93A4A3777CF96A4AAC1D13BA6DCCEA73 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; lastKnownFileType = text; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		919D1C29F6262C5FD053BAFBBCDF9A4D /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = LICENSE; sourceTree = "<group>"; };
+		93A4A3777CF96A4AAC1D13BA6DCCEA73 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		942F6FE49883AFBBDEFC7EFCC47CBB25 /* Pods-PYTransitionAnimater_Example-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-PYTransitionAnimater_Example-frameworks.sh"; sourceTree = "<group>"; };
 		9534526F4218DB47486AE558D732B354 /* Pods-PYTransitionAnimater_Tests-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-PYTransitionAnimater_Tests-umbrella.h"; sourceTree = "<group>"; };
-		9CF59429506AC316387AC48948EFBBC9 /* BasePresentViewControllerConfiguration.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = BasePresentViewControllerConfiguration.m; sourceTree = "<group>"; };
 		A11D5B54955E3381F067364E427B571A /* FBSnapshotTestCase-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "FBSnapshotTestCase-umbrella.h"; sourceTree = "<group>"; };
 		A410A677163B1097CF97EB2E75208C90 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		A9357472A11A6004F8E4C2B1D8D62D51 /* Pods-PYTransitionAnimater_Example-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-PYTransitionAnimater_Example-acknowledgements.markdown"; sourceTree = "<group>"; };
-		AC6F696735EAB3129E3A9481A716C544 /* BasePresentViewController.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = BasePresentViewController.m; sourceTree = "<group>"; };
 		AFA833769CCB66D190BC6E7DBAD1B4A5 /* PYTransitionAnimater-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "PYTransitionAnimater-umbrella.h"; sourceTree = "<group>"; };
 		B9109B8B333B5A1A3E92EFC09EDC10AC /* UIApplication+StrictKeyWindow.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "UIApplication+StrictKeyWindow.h"; path = "FBSnapshotTestCase/Categories/UIApplication+StrictKeyWindow.h"; sourceTree = "<group>"; };
 		B9CEF7D6C5E08AB80E58DABC75D882BC /* UIImage+Diff.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "UIImage+Diff.m"; path = "FBSnapshotTestCase/Categories/UIImage+Diff.m"; sourceTree = "<group>"; };
 		BBB6A925DF90E5500E7BDCC094FEBEA7 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS11.3.sdk/System/Library/Frameworks/UIKit.framework; sourceTree = DEVELOPER_DIR; };
 		C1A94602875A48A997AD3F08A33E6EAA /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS11.3.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
-		CA3630CF630908E8C97D04F5172E9534 /* BasePresentNavigationController.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = BasePresentNavigationController.h; sourceTree = "<group>"; };
 		CD12AA10037AD7D9E6078192A15FAF04 /* Animater.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = Animater.h; sourceTree = "<group>"; };
 		D77B07CA7D221E3EC46B93C00BF37CDE /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS11.3.sdk/System/Library/Frameworks/QuartzCore.framework; sourceTree = DEVELOPER_DIR; };
 		D97545C39C4A5EE2631DD9FFECE76A40 /* SwiftSupport.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = SwiftSupport.swift; path = FBSnapshotTestCase/SwiftSupport.swift; sourceTree = "<group>"; };
-		DB2969088E61B07D27FC39B2CC0AAD5B /* BaseAnimaterHeaders.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = BaseAnimaterHeaders.m; sourceTree = "<group>"; };
 		DBF6F8923B9C46893C50F086548C27B6 /* ReplaceMe.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = ReplaceMe.m; path = PYTransitionAnimater/Classes/ReplaceMe.m; sourceTree = "<group>"; };
-		DE423CFBD761AC34F4A81C1AE38F20CE /* BasePresentViewController.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = BasePresentViewController.h; sourceTree = "<group>"; };
 		E37899BD4B349060AA147E2A3721D3A2 /* FBSnapshotTestCase.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = FBSnapshotTestCase.h; path = FBSnapshotTestCase/FBSnapshotTestCase.h; sourceTree = "<group>"; };
 		E7843C520ED7D11392D872D57034A1BC /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS11.3.sdk/System/Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
 		EC554638FECC9AA24EEF8AD152BCEAE8 /* Pods-PYTransitionAnimater_Tests-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-PYTransitionAnimater_Tests-dummy.m"; sourceTree = "<group>"; };
@@ -213,7 +237,6 @@
 				3288FCB8E15F6401DE6220AE5CA1D27B /* Support Files */,
 				99E46DD4AB2256791F111C718CB0EEF8 /* SwiftSupport */,
 			);
-			name = FBSnapshotTestCase;
 			path = FBSnapshotTestCase;
 			sourceTree = "<group>";
 		};
@@ -339,14 +362,14 @@
 		9EE5A52ECC045F83AA97826092F4F30C /* AnimaterUI */ = {
 			isa = PBXGroup;
 			children = (
-				34579180B9BD0EBA2F0AEDE702675EDF /* BaseAnimaterHeaders.h */,
-				DB2969088E61B07D27FC39B2CC0AAD5B /* BaseAnimaterHeaders.m */,
-				CA3630CF630908E8C97D04F5172E9534 /* BasePresentNavigationController.h */,
-				807685DE98B47B82AC863777B7FCAE59 /* BasePresentNavigationController.m */,
-				DE423CFBD761AC34F4A81C1AE38F20CE /* BasePresentViewController.h */,
-				AC6F696735EAB3129E3A9481A716C544 /* BasePresentViewController.m */,
-				8081429796E6082BCC10F464E2D77D8A /* BasePresentViewControllerConfiguration.h */,
-				9CF59429506AC316387AC48948EFBBC9 /* BasePresentViewControllerConfiguration.m */,
+				86416BF72189BDB700232853 /* BaseAnimaterHeaders.h */,
+				86416BFB2189BDB700232853 /* BaseAnimaterHeaders.m */,
+				86416BF82189BDB700232853 /* BasePresentNavigationController.h */,
+				86416BF92189BDB700232853 /* BasePresentNavigationController.m */,
+				86416BFA2189BDB700232853 /* BasePresentViewController.h */,
+				86416BFC2189BDB700232853 /* BasePresentViewController.m */,
+				86416BFE2189BDB800232853 /* BasePresentViewControllerConfiguration.h */,
+				86416BFD2189BDB700232853 /* BasePresentViewControllerConfiguration.m */,
 			);
 			name = AnimaterUI;
 			path = PYTransitionAnimater/Classes/AnimaterUI;
@@ -421,11 +444,11 @@
 			files = (
 				A0DF9EB62EEAFF26873AE9A7FA9577D3 /* AnimatedTransition.h in Headers */,
 				320A65879FEBA037AE3F5EA53F49D34E /* Animater.h in Headers */,
-				599D39E0835031D7852EFB0B8B1B549A /* BaseAnimaterHeaders.h in Headers */,
-				70D6A3D86F0D8524262CED416735C452 /* BasePresentNavigationController.h in Headers */,
-				23919D2612C29C36475779855B1C4329 /* BasePresentViewController.h in Headers */,
-				089FF1EFE1C4817EC268B7233457AFCB /* BasePresentViewControllerConfiguration.h in Headers */,
+				86416C062189BDB800232853 /* BasePresentNavigationController.h in Headers */,
 				CBE51DB99413F42173EB12405A00E60A /* PYTransitionAnimater-umbrella.h in Headers */,
+				86416C1E2189BDB800232853 /* BasePresentViewControllerConfiguration.h in Headers */,
+				86416C0E2189BDB800232853 /* BasePresentViewController.h in Headers */,
+				86416C022189BDB800232853 /* BaseAnimaterHeaders.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -433,7 +456,11 @@
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				86416C1C2189BDB800232853 /* BasePresentViewControllerConfiguration.h in Headers */,
+				86416C0C2189BDB800232853 /* BasePresentViewController.h in Headers */,
 				4DA753D5E2E5213BD0559A7BA1825E6D /* Pods-PYTransitionAnimater_Example-umbrella.h in Headers */,
+				86416C042189BDB800232853 /* BasePresentNavigationController.h in Headers */,
+				86416C002189BDB800232853 /* BaseAnimaterHeaders.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -445,10 +472,14 @@
 				B08725BB938AA3AACCA3C8C818FA4CF6 /* FBSnapshotTestCase.h in Headers */,
 				4D600539FC2E29EA7E28A2DA8A8B328C /* FBSnapshotTestCasePlatform.h in Headers */,
 				59FD5FAEFCF13CD39358A6F36C50BED8 /* FBSnapshotTestController.h in Headers */,
+				86416C0B2189BDB800232853 /* BasePresentViewController.h in Headers */,
 				BCDA265400AF5BCF21074C5AF1FD09A8 /* UIApplication+StrictKeyWindow.h in Headers */,
 				63EA4B9CBBAB30A69C2D73693019FDC5 /* UIImage+Compare.h in Headers */,
 				73247510D7AD93E5FDBA474B353BF919 /* UIImage+Diff.h in Headers */,
+				86416C032189BDB800232853 /* BasePresentNavigationController.h in Headers */,
+				86416C1B2189BDB800232853 /* BasePresentViewControllerConfiguration.h in Headers */,
 				387D066A1A34ED7DF0F716CB3A8B746D /* UIImage+Snapshot.h in Headers */,
+				86416BFF2189BDB800232853 /* BaseAnimaterHeaders.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -456,7 +487,11 @@
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				86416C1D2189BDB800232853 /* BasePresentViewControllerConfiguration.h in Headers */,
+				86416C0D2189BDB800232853 /* BasePresentViewController.h in Headers */,
 				22774524C97387E8DA85FC1A0E09706C /* Pods-PYTransitionAnimater_Tests-umbrella.h in Headers */,
+				86416C052189BDB800232853 /* BasePresentNavigationController.h in Headers */,
+				86416C012189BDB800232853 /* BaseAnimaterHeaders.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -604,13 +639,17 @@
 			buildActionMask = 2147483647;
 			files = (
 				459F58959A5C947E77A424BF94098D08 /* FBSnapshotTestCase-dummy.m in Sources */,
+				86416C132189BDB800232853 /* BasePresentViewController.m in Sources */,
+				86416C0F2189BDB800232853 /* BaseAnimaterHeaders.m in Sources */,
 				6EC17B6986CC7F9EBDF0521AE86F371B /* FBSnapshotTestCase.m in Sources */,
+				86416C072189BDB800232853 /* BasePresentNavigationController.m in Sources */,
 				6B71ACB6D56B970D0B2AD8EE2B79D96F /* FBSnapshotTestCasePlatform.m in Sources */,
 				E2E2BC984CCC1978CB9E22B72258C641 /* FBSnapshotTestController.m in Sources */,
 				163DC390363C339936B3114C72FE6716 /* SwiftSupport.swift in Sources */,
 				AFF108D6E8D891F7B8148CA0158B2A23 /* UIApplication+StrictKeyWindow.m in Sources */,
 				4C022C88B9E8D527B1426B5281756EDE /* UIImage+Compare.m in Sources */,
 				E4877E179010E4E588B6E9E61B047B60 /* UIImage+Diff.m in Sources */,
+				86416C172189BDB800232853 /* BasePresentViewControllerConfiguration.m in Sources */,
 				EA2C5FBB576DBC67BE3E2F5897704BBF /* UIImage+Snapshot.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -619,7 +658,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				86416C182189BDB800232853 /* BasePresentViewControllerConfiguration.m in Sources */,
+				86416C082189BDB800232853 /* BasePresentNavigationController.m in Sources */,
+				86416C142189BDB800232853 /* BasePresentViewController.m in Sources */,
 				F0D498717F7357E00F23AAE0216FCD67 /* Pods-PYTransitionAnimater_Example-dummy.m in Sources */,
+				86416C102189BDB800232853 /* BaseAnimaterHeaders.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -627,7 +670,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				86416C192189BDB800232853 /* BasePresentViewControllerConfiguration.m in Sources */,
+				86416C092189BDB800232853 /* BasePresentNavigationController.m in Sources */,
+				86416C152189BDB800232853 /* BasePresentViewController.m in Sources */,
 				3BDF226821172391FA3928A1570EF2F1 /* Pods-PYTransitionAnimater_Tests-dummy.m in Sources */,
+				86416C112189BDB800232853 /* BaseAnimaterHeaders.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -637,11 +684,11 @@
 			files = (
 				B821B69E5EBD7C7D45A90A51AB1A94E3 /* AnimatedTransition.m in Sources */,
 				FFF78FF8E35BA0F70DCA89168A4B3F97 /* Animater.m in Sources */,
-				B76342693C11A259133782D8DC05CCD0 /* BaseAnimaterHeaders.m in Sources */,
-				BD0149CA170C7B1F818196CA8B628C4A /* BasePresentNavigationController.m in Sources */,
-				AAB3147737C741341BD5966D1B6C17D6 /* BasePresentViewController.m in Sources */,
-				B95DB987D1C3DA5332FCF5CE174CE053 /* BasePresentViewControllerConfiguration.m in Sources */,
+				86416C122189BDB800232853 /* BaseAnimaterHeaders.m in Sources */,
+				86416C0A2189BDB800232853 /* BasePresentNavigationController.m in Sources */,
+				86416C162189BDB800232853 /* BasePresentViewController.m in Sources */,
 				F0CD0E23E2728BB723D788E12C65DA40 /* PYTransitionAnimater-dummy.m in Sources */,
+				86416C1A2189BDB800232853 /* BasePresentViewControllerConfiguration.m in Sources */,
 				C7CE4CD0EDCEEECE7722D1FFB2159F9D /* ReplaceMe.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -851,8 +898,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SDKROOT = iphoneos;
 				SKIP_INSTALL = YES;
-				SWIFT_COMPILATION_MODE = wholemodule;
-				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VALIDATE_PRODUCT = YES;
 				VERSIONING_SYSTEM = "apple-generic";
@@ -884,8 +930,7 @@
 				SDKROOT = iphoneos;
 				SKIP_INSTALL = YES;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
-				SWIFT_COMPILATION_MODE = wholemodule;
-				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VALIDATE_PRODUCT = YES;
 				VERSIONING_SYSTEM = "apple-generic";
