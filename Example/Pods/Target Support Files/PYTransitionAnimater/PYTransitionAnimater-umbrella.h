@@ -12,6 +12,7 @@
 
 #import "BasePresentViewController.h"
 #import "BasePresentViewControllerConfiguration.h"
+#import "PhotoProductNavigationController.h"
 #import "AnimatedTransition.h"
 #import "Animater.h"
 
