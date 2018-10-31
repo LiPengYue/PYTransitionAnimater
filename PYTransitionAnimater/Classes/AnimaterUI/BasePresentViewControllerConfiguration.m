@@ -137,6 +137,14 @@
         return self;
     };
 }
+
+- (BasePresentViewControllerConfiguration *(^)(UIColor *color)) setUpPresentShadowColor {
+    return ^(UIColor *color) {
+        self.presentShadowColor = color;
+        return self;
+    };
+}
+
 - (BasePresentViewControllerConfiguration *(^)(CGSize size)) setUpDismissShadowOffset {
     return ^(CGSize size) {
         self.dismissShadowOffset = size;
@@ -149,12 +157,7 @@
         return self;
     };
 }
-- (BasePresentViewControllerConfiguration *(^)(UIColor *color)) setUpPresentShadowColor {
-    return ^(UIColor *color) {
-        self.presentShadowColor = color;
-        return self;
-    };
-}
+
 - (BasePresentViewControllerConfiguration *(^)(UIColor *color)) setUpDismissShadowColor {
     return ^(UIColor *color) {
         self.dismissShadowColor = color;
