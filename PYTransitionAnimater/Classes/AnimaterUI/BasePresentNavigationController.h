@@ -8,7 +8,6 @@
 
 #import <UIKit/UIKit.h>
 #import "BasePresentViewControllerConfiguration.h"
-#import "BasePresentNavigationController.h"
 
 typedef void(^ BasicAnimationBlock)(CABasicAnimation *animation);
 @interface BasePresentNavigationController : UINavigationController
