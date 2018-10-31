@@ -8,10 +8,10 @@
 
 #import <UIKit/UIKit.h>
 #import "BasePresentViewControllerConfiguration.h"
-#import "BaseNavigationController.h"
+#import "BasePresentNavigationController.h"
 
 typedef void(^ BasicAnimationBlock)(CABasicAnimation *animation);
-@interface BasePresentNavigationController : BaseNavigationController
+@interface BasePresentNavigationController : UINavigationController
 
 /**
  对此赋值 才能执行动画
@@ -43,7 +43,7 @@ typedef void(^ BasicAnimationBlock)(CABasicAnimation *animation);
  * 1. 点击背景的button
  * 2. block中的返回值： 是否需要执行dismiss方法
  */
-- (void) clickBackgroundButtonFunc: (BOOL(^)(BasePresentNavigationController *presentVC))clickCallBack;
+- (void) clickBackgroundButtonBlockFunc: (BOOL(^)(BasePresentNavigationController *presentVC))clickCallBack;
 
 /**
  present 动画中
@@ -62,4 +62,10 @@ typedef void(^ BasicAnimationBlock)(CABasicAnimation *animation);
  */
 - (void) dismissAnimationBegin: (void (^)(UIView *toView,UIView *fromeView)) block
                  andCompletion: (void(^)(UIView *toView, UIView *fromeView)) completion;
+
+
+/// 外部调用 将要dismissblock
+- (BOOL) willDismiss;
+- (void) didDismiss;
+- (BOOL) clickBackgroundView;
 @end

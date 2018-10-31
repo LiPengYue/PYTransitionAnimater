@@ -11,7 +11,7 @@
 
 
 typedef void(^ BasicAnimationBlock)(CABasicAnimation *animation);
-@interface BasePresentViewController :UIViewController
+@interface BasePresentViewController : UIViewController
 
 
 /**
@@ -44,7 +44,7 @@ typedef void(^ BasicAnimationBlock)(CABasicAnimation *animation);
  * 1. 点击背景的button
  * 2. block中的返回值： 是否需要执行dismiss方法
  */
-- (void) clickBackgroundButtonFunc: (BOOL(^)(BasePresentViewController *presentVC))clickCallBack;
+- (void) clickBackgroundButtonBlockFunc: (BOOL(^)(BasePresentViewController *presentVC))clickCallBack;
 
 /**
  present 动画中

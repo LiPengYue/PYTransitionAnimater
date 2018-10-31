@@ -7,6 +7,7 @@
 //
 
 #import "BasePresentViewController.h"
+#import "BasePresentNavigationController.h"
 #import "Animater.h"
 
 @interface BasePresentViewController ()
@@ -503,11 +504,15 @@
     self.didDismissBlock = didDismissBlock;
 }
 
-- (void) clickBackgroundButtonFunc:(BOOL (^)(BasePresentViewController *))clickCallBack {
+- (void) clickBackgroundButtonBlockFunc:(BOOL (^)(BasePresentViewController *))clickCallBack {
     self.clickBackgroundButtonCallBack = clickCallBack;
 }
 
 - (void) clickBackgroundButtonFunc {
+    BasePresentNavigationController *nav = [self getPresentNavigationController];
+    if(nav && ![nav clickBackgroundView]) {
+        return;
+    }
     if (self.clickBackgroundButtonCallBack) {
         if (!self.clickBackgroundButtonCallBack(self)) {
             return;
@@ -543,12 +548,19 @@
 // MARK:life cycles
 - (void)dismissViewControllerAnimated:(BOOL)flag
                            completion:(void (^)(void))completion {
+    BasePresentNavigationController *nav = [self getPresentNavigationController];
+    if(nav && ![nav willDismiss]) {
+        return;
+    }
     if (self.willDismissBlock) {
         BOOL isDismiss = self.willDismissBlock(self);
         if (!isDismiss) return;
     }
     
     [super dismissViewControllerAnimated:flag completion:^{
+        BasePresentNavigationController *nav = [self getPresentNavigationController];
+        [nav didDismiss];
+        
         if (self.didDismissBlock) {
             self.didDismissBlock(self);
         }
@@ -585,5 +597,12 @@
 
 - (void) dismissBeginBasicAnimation: (BasicAnimationBlock) dismiss {
     self.dismissBeginBasicAnimationBlock = dismiss;
+}
+
+- (BasePresentNavigationController *) getPresentNavigationController {
+    if ([self.navigationController isKindOfClass:[BasePresentNavigationController class]]) {
+        return (BasePresentNavigationController *)self.navigationController;
+    }
+    return nil;
 }
 @end

@@ -45,9 +45,8 @@
     [vc didDismissFunc:^(BasePresentViewController *presentVC) {
         NSLog(@"2didDismissFunc");
     }];
-    
-    [vc clickBackgroundButtonFunc:^BOOL(BasePresentViewController *presentVC) {
-        NSLog(@"3clickBackgroundButtonFunc");
+    [vc clickBackgroundButtonBlockFunc:^BOOL(BasePresentViewController *presentVC) {
+         NSLog(@"3clickBackgroundButtonFunc");
         return true;
     }];
 }

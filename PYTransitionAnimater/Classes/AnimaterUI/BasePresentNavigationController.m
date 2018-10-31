@@ -503,7 +503,7 @@
     self.didDismissBlock = didDismissBlock;
 }
 
-- (void) clickBackgroundButtonFunc:(BOOL (^)(BasePresentNavigationController *))clickCallBack {
+- (void) clickBackgroundButtonBlockFunc:(BOOL (^)(BasePresentNavigationController *))clickCallBack {
     self.clickBackgroundButtonCallBack = clickCallBack;
 }
 
@@ -591,16 +591,30 @@
     self.view.backgroundColor = self.config.backgroundColor;
     
     [self.childViewControllers enumerateObjectsUsingBlock:^(__kindof UIViewController * _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
-        [obj ifIs:[BasePresentViewController class] Do:^(BasePresentViewController *obj){
+        if ([obj isKindOfClass:[BasePresentViewController class]]
+            || [obj isKindOfClass:[self class]]) {
             obj.view.backgroundColor = self.config.backgroundColor;
-        }];
-        
-        [obj ifIs:[BasePresentNavigationController class]
-        Do: ^(BasePresentNavigationController *obj) {
-            obj.view.backgroundColor = self.config.backgroundColor;
-        }];
+        };
     }];
     return [super popViewControllerAnimated:animated];
+}
+
+- (BOOL) willDismiss {
+    if (self.willDismissBlock) {
+        return self.willDismissBlock(self);
+    }
+    return true;
+}
+- (void) didDismiss {
+    if (self.didDismissBlock) {
+        self.didDismissBlock(self);
+    }
+}
+- (BOOL) clickBackgroundView {
+    if (self.clickBackgroundButtonCallBack) {
+        return self.clickBackgroundButtonCallBack(self);
+    }
+    return true;
 }
 
 @end
