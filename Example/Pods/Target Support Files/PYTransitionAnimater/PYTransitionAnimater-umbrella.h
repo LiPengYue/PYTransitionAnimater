@@ -10,9 +10,9 @@
 #endif
 #endif
 
+#import "BasePresentNavigationController.h"
 #import "BasePresentViewController.h"
 #import "BasePresentViewControllerConfiguration.h"
-#import "PhotoProductNavigationController.h"
 #import "AnimatedTransition.h"
 #import "Animater.h"
 
