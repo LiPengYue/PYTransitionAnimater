@@ -34,8 +34,6 @@
 
     [self.view addSubview: self.button];
     self.button.frame = CGRectMake(110, 0, self.view.frame.size.width - 110, self.view.frame.size.height);
-    
-   
 }
 
 - (UIImageView *)button {

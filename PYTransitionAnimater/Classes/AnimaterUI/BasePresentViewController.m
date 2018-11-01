@@ -7,6 +7,7 @@
 //
 
 #import "BasePresentViewController.h"
+#import "BasePresentViewControllerConfiguration.h"
 #import "BasePresentNavigationController.h"
 #import "Animater.h"
 
@@ -23,9 +24,9 @@
 @property (nonatomic,copy) void(^didDismissBlock)(BasePresentViewController *presentVC);
 @property (nonatomic,copy) BOOL(^clickBackgroundButtonCallBack)(BasePresentViewController *presentVC);
 @property (nonatomic,copy) void(^presetionAnimationBeginBlock)(UIView *toView, UIView *fromeView);
-@property (nonatomic,copy) ToViewAndFromeViewBlock dismissAnimationBeginBlock;
-@property (nonatomic,copy) ToViewAndFromeViewBlock dismissAnimatingCompletion;
-@property (nonatomic,copy) ToViewAndFromeViewBlock presentAnimatingCompletion; 
+@property (nonatomic,copy) void(^dismissAnimationBeginBlock)(UIView *toView,UIView *fromeView);
+@property (nonatomic,copy) void(^dismissAnimatingCompletion)(UIView *toView, UIView *fromeView);
+@property (nonatomic,copy) void(^presentAnimatingCompletion)(UIView *toView,UIView *fromeView);
 
 @property (nonatomic,copy) BasicAnimationBlock presentBeginBasicAnimationBlock;
 @property (nonatomic,copy) BasicAnimationBlock dismissBeginBasicAnimationBlock;
@@ -152,7 +153,7 @@
 }
 // present animation func
 - (void) presentAnimation: (void(^)(BasePresentViewController *weakSelf))block
-            andCompletionBlock:(void(^)(BasePresentViewController *weakSelf))completion {
+       andCompletionBlock:(void(^)(BasePresentViewController *weakSelf))completion {
     [self present_animationViewShadowAnimation: self.config.presentDuration];
     [self presetionAnimationBeginBlockFunc];
     
@@ -160,17 +161,17 @@
     self.animationView.alpha = self.config.presentStartAlpha;
     self.view.backgroundColor = [UIColor colorWithWhite:0 alpha:0];
     
-     [UIView animateWithDuration:self.config.presentDuration
-                           delay:self.config.presentDelayDuration
-                         options:self.config.presentAnimationOptions
-                      animations:
-      ^{
-          
+    [UIView animateWithDuration:self.config.presentDuration
+                          delay:self.config.presentDelayDuration
+                        options:self.config.presentAnimationOptions
+                     animations:
+     ^{
+         
          self.animationView.alpha = 1;
          if (block) {
              block(weakSelf);
          }
-          self.view.backgroundColor = self.config.backgroundColor;
+         self.view.backgroundColor = self.config.backgroundColor;
      } completion:^(BOOL finished) {
          self.animation_animater.isAccomplishAnima = true;
          if (completion) {
@@ -256,7 +257,7 @@
     CABasicAnimation *shadowOffset_anim = [self createBasicAnimationWithKey:@"shadowOffset"];
     shadowOffset_anim.fromValue = [NSValue valueWithCGSize:fromOffset];
     shadowOffset_anim.toValue = [NSValue valueWithCGSize:toOffset];
-//    self.animationView.layer.shadowOffset = toOffset;
+    //    self.animationView.layer.shadowOffset = toOffset;
     return shadowOffset_anim;
 }
 
@@ -284,7 +285,7 @@
 - (void) presetionAnimationBeginBlockFunc {
     if (self.presetionAnimationBeginBlock) {
         self.presetionAnimationBeginBlock(self.animationView,
-                                         self.animation_fromeView);
+                                          self.animation_fromeView);
     }
 }
 - (void) presentZoomAnimation: (UIView *)fromView
@@ -385,22 +386,22 @@
     __weak typeof(self)weakSelf = self;
     
     [UIView animateWithDuration:weakSelf.config.dismissDuration
-                           delay:weakSelf.config.dismissDelayDuration
-                         options:UIViewAnimationOptionCurveEaseIn
-                      animations:
-      ^{
-          self.animationView.alpha = weakSelf.config.dismissEndAlpha;
-          if (block) {
-              block(weakSelf);
-          }
-          self.view.backgroundColor = [UIColor colorWithWhite:0 alpha:0];
-      } completion:^(BOOL finished) {
-          weakSelf.animation_animater.isAccomplishAnima = true;
-          if(completion) {
-              completion(weakSelf);
-          }
-          [weakSelf dismissAnimationCompletionFunc];
-      }];
+                          delay:weakSelf.config.dismissDelayDuration
+                        options:UIViewAnimationOptionCurveEaseIn
+                     animations:
+     ^{
+         self.animationView.alpha = weakSelf.config.dismissEndAlpha;
+         if (block) {
+             block(weakSelf);
+         }
+         self.view.backgroundColor = [UIColor colorWithWhite:0 alpha:0];
+     } completion:^(BOOL finished) {
+         weakSelf.animation_animater.isAccomplishAnima = true;
+         if(completion) {
+             completion(weakSelf);
+         }
+         [weakSelf dismissAnimationCompletionFunc];
+     }];
 }
 
 - (void) dismissAnimationBeginBlockFunc {
@@ -523,6 +524,10 @@
 
 
 // MARK: properties get && set
+- (void) setAnimationView:(UIView *)animationView {
+    _animationView = animationView;
+    [self getPresentNavigationController].animationView = animationView;
+}
 - (Animater *) animation_animater {
     if (!_animation_animater) {
         _animation_animater = [[Animater alloc]initWithModalPresentationStyle:UIModalPresentationCustom];
@@ -604,5 +609,21 @@
         return (BasePresentNavigationController *)self.navigationController;
     }
     return nil;
+}
+- (BasePresentNavigationController *)addNavigationController {
+    BasePresentNavigationController *presentNavigationController = [[BasePresentNavigationController alloc]init];
+    presentNavigationController.config = self.config;
+    [presentNavigationController setValue:self forKey:@"presentViewController"];
+    return presentNavigationController;
+}
+
+- (BasePresentNavigationController *)presentNavigationController {
+    BasePresentNavigationController *vc = _presentNavigationController;
+    if (!vc) {
+        BasePresentNavigationController *presentNavigationController = [self addNavigationController];
+        _presentNavigationController = presentNavigationController;
+        vc = presentNavigationController;
+    }
+    return vc;
 }
 @end

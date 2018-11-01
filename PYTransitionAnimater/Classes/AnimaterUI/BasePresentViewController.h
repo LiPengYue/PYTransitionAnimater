@@ -7,13 +7,13 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "BasePresentViewControllerConfiguration.h"
 
+@class BasePresentNavigationController;
+@class BasePresentViewControllerConfiguration;
 
 typedef void(^ BasicAnimationBlock)(CABasicAnimation *animation);
-typedef void(^ ToViewAndFromeViewBlock)(UIView *toView, UIView *fromeView);
-@interface BasePresentViewController : UIViewController
 
+@interface BasePresentViewController : UIViewController
 
 /**
  对此赋值 才能执行动画
@@ -53,8 +53,8 @@ typedef void(^ ToViewAndFromeViewBlock)(UIView *toView, UIView *fromeView);
  @warning toView 指的是 self.animaterView
  @warning fromeView 指的是 self.presentingViewController
  */
-- (void) presentAnimationBegin: (ToViewAndFromeViewBlock) block
-                 andCompletion: (ToViewAndFromeViewBlock) completion;
+- (void) presentAnimationBegin: (void(^)(UIView *toView, UIView *fromeView)) block
+                 andCompletion: (void(^)(UIView *toView, UIView *fromeView)) completion;
 
 /**
  dismiss 动画中
@@ -62,10 +62,25 @@ typedef void(^ ToViewAndFromeViewBlock)(UIView *toView, UIView *fromeView);
  @warning toView 指的是 self.presentingViewController
  @warning fromeView 指的是 self.animaterView
  */
-- (void) dismissAnimationBegin: (ToViewAndFromeViewBlock) block
-                 andCompletion: (ToViewAndFromeViewBlock) completion;
+- (void) dismissAnimationBegin: (void (^)(UIView *toView,UIView *fromeView)) block
+                 andCompletion: (void(^)(UIView *toView, UIView *fromeView)) completion;
 
 
+///**
+// present 开始时候的动画
+// @warning 做layer 动画
+// @warning 默认keypath 为 “shadowOffset”
+// @param present block
+// */
+//- (void) presentBeginBasicAnimation: (BasicAnimationBlock) present;
+///**
+// dismiss 开始时候的动画
+// @warning 做layer(比如阴影等)动画
+// @param present block
+// */
+//- (void) dismissBeginBasicAnimation: (BasicAnimationBlock) dismiss;
+@property (nonatomic,weak) BasePresentNavigationController *presentNavigationController;
+- (BasePresentNavigationController *) addNavigationController;
 @end
 
 

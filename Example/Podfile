@@ -6,6 +6,6 @@ target 'PYTransitionAnimater_Example' do
   target 'PYTransitionAnimater_Tests' do
     inherit! :search_paths
 
-    pod 'FBSnapshotTestCase'
+#    pod 'FBSnapshotTestCase'
   end
 end

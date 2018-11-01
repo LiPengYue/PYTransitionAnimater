@@ -7,7 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
-#import <PYTransitionAnimater/BasePresentViewController.h>
+#import <PYTransitionAnimater/BaseAnimaterHeaders.h>
 @interface PYModalViewController : BasePresentViewController
 
 @end

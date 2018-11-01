@@ -7,6 +7,7 @@
 //
 
 #import "BasePresentNavigationController.h"
+#import "BasePresentViewControllerConfiguration.h"
 #import "BasePresentViewController.h"
 #import "Animater.h"
 
@@ -32,7 +33,9 @@
 @end
 
 @implementation BasePresentNavigationController
-
+- (void)dealloc {
+    NSLog(@"✅ %@：被销毁",self);
+}
 #pragma mark - init
 - (instancetype)init
 {
@@ -47,6 +50,7 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    [self addChildViewController: self.presentViewController];
     [self animater_setup];
 }
 
@@ -69,7 +73,7 @@
 // MARK: handle views
 - (void) animater_setupButton {
     [self.childViewControllers.firstObject.view insertSubview:self.backgroundButton  atIndex:0];
-//    [self.view addSubview:self.backgroundButton];
+    //    [self.view addSubview:self.backgroundButton];
     self.backgroundButton.frame = self.view.bounds;
     [self.backgroundButton addTarget:self action:@selector(clickBackgroundButtonFunc) forControlEvents:UIControlEventTouchUpInside];
 }

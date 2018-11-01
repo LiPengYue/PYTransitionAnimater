@@ -7,11 +7,13 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "BasePresentViewControllerConfiguration.h"
+
+@class BasePresentViewControllerConfiguration;
+@class BasePresentViewController;
 
 typedef void(^ BasicAnimationBlock)(CABasicAnimation *animation);
 @interface BasePresentNavigationController : UINavigationController
-
+@property (nonatomic,strong) BasePresentViewController *presentViewController;
 /**
  对此赋值 才能执行动画
  */

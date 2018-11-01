@@ -8,7 +8,7 @@
 #import <Foundation/Foundation.h>
 #import "BasePresentNavigationController.h"
 #import "BasePresentViewController.h"
-
+#import "BasePresentViewControllerConfiguration.h"
 @interface BaseAnimaterHeaders : NSObject
 
 @end
