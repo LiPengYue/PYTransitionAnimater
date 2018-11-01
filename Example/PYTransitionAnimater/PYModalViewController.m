@@ -50,7 +50,7 @@
     return _button;
 }
 - (void) click {
-//    [self dismissViewControllerAnimated:true completion:nil];
+
 }
 
 - (void)dealloc {

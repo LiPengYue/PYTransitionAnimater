@@ -7,7 +7,9 @@
 //
 
 #import <PYTransitionAnimater/BaseAnimaterHeaders.h>
+#import "PYModalNavViewController.h"
 
 @interface PYNavigationViewController : BasePresentNavigationController
+
 
 @end

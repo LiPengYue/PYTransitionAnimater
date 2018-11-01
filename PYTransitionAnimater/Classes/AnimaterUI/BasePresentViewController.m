@@ -23,9 +23,9 @@
 @property (nonatomic,copy) void(^didDismissBlock)(BasePresentViewController *presentVC);
 @property (nonatomic,copy) BOOL(^clickBackgroundButtonCallBack)(BasePresentViewController *presentVC);
 @property (nonatomic,copy) void(^presetionAnimationBeginBlock)(UIView *toView, UIView *fromeView);
-@property (nonatomic,copy) void(^dismissAnimationBeginBlock)(UIView *toView,UIView *fromeView);
-@property (nonatomic,copy) void(^dismissAnimatingCompletion)(UIView *toView, UIView *fromeView);
-@property (nonatomic,copy) void(^presentAnimatingCompletion)(UIView *toView,UIView *fromeView);
+@property (nonatomic,copy) ToViewAndFromeViewBlock dismissAnimationBeginBlock;
+@property (nonatomic,copy) ToViewAndFromeViewBlock dismissAnimatingCompletion;
+@property (nonatomic,copy) ToViewAndFromeViewBlock presentAnimatingCompletion; 
 
 @property (nonatomic,copy) BasicAnimationBlock presentBeginBasicAnimationBlock;
 @property (nonatomic,copy) BasicAnimationBlock dismissBeginBasicAnimationBlock;
