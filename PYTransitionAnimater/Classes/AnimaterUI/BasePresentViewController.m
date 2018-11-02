@@ -23,16 +23,16 @@
 @property (nonatomic,copy) BOOL(^willDismissBlock)(BasePresentViewController *presentVC);
 @property (nonatomic,copy) void(^didDismissBlock)(BasePresentViewController *presentVC);
 @property (nonatomic,copy) BOOL(^clickBackgroundButtonCallBack)(BasePresentViewController *presentVC);
+
 @property (nonatomic,copy) void(^presetionAnimationBeginBlock)(UIView *toView, UIView *fromeView);
+@property (nonatomic,copy) void(^presentAnimatingCompletion)(UIView *toView,UIView *fromeView);
+
 @property (nonatomic,copy) void(^dismissAnimationBeginBlock)(UIView *toView,UIView *fromeView);
 @property (nonatomic,copy) void(^dismissAnimatingCompletion)(UIView *toView, UIView *fromeView);
-@property (nonatomic,copy) void(^presentAnimatingCompletion)(UIView *toView,UIView *fromeView);
 
 @property (nonatomic,copy) BasicAnimationBlock presentBeginBasicAnimationBlock;
 @property (nonatomic,copy) BasicAnimationBlock dismissBeginBasicAnimationBlock;
 @end
-
-
 
 @implementation BasePresentViewController
 
@@ -67,7 +67,6 @@
     [self animater_setupAnimater];
     [self animater_setupButton];
 }
-
 
 // MARK: handle views
 - (void) animater_setupButton {
@@ -147,10 +146,6 @@
     return !rect.size.width && !rect.size.height;
 }
 
-- (void)viewWillAppear:(BOOL)animated {
-    [super viewWillAppear:animated];
-    
-}
 // present animation func
 - (void) presentAnimation: (void(^)(BasePresentViewController *weakSelf))block
        andCompletionBlock:(void(^)(BasePresentViewController *weakSelf))completion {
@@ -274,8 +269,6 @@
     return color_anim;
 }
 
-
-
 - (void) presentCompletionFunc {
     if (self.presentAnimatingCompletion) {
         self.presentAnimatingCompletion(self.animationView, self.animation_fromeView);
@@ -288,6 +281,7 @@
                                           self.animation_fromeView);
     }
 }
+
 - (void) presentZoomAnimation: (UIView *)fromView
                     andToView: (UIView *)toview {
     
@@ -315,7 +309,6 @@
         }
     } andCompletionBlock:nil];
 }
-
 
 - (void) presentAnimationStyleLeftFunc {
     CGRect originFrame = [self getAnimationViewFrame];
@@ -410,6 +403,7 @@
                                         self.animationView);
     }
 }
+
 - (void) dismissAnimationCompletionFunc {
     if (self.dismissAnimatingCompletion) {
         self.dismissAnimatingCompletion(self.animation_fromeView,
@@ -495,7 +489,6 @@
     } andCompletionBlock:nil];
 }
 
-
 // MARK: handle event
 - (void) willDismissFunc: (BOOL(^)(BasePresentViewController *presentVC))willDismissBlock {
     self.willDismissBlock = willDismissBlock;
@@ -522,12 +515,12 @@
     [self dismissViewControllerAnimated:true completion:nil];
 }
 
-
 // MARK: properties get && set
 - (void) setAnimationView:(UIView *)animationView {
     _animationView = animationView;
     [self getPresentNavigationController].animationView = animationView;
 }
+
 - (Animater *) animation_animater {
     if (!_animation_animater) {
         _animation_animater = [[Animater alloc]initWithModalPresentationStyle:UIModalPresentationCustom];
@@ -548,7 +541,6 @@
     }
     return _animation_backgroundButton;
 }
-
 
 // MARK:life cycles
 - (void)dismissViewControllerAnimated:(BOOL)flag
@@ -610,6 +602,7 @@
     }
     return nil;
 }
+
 - (BasePresentNavigationController *)addNavigationController {
     BasePresentNavigationController *presentNavigationController = [[BasePresentNavigationController alloc]init];
     presentNavigationController.config = self.config;
