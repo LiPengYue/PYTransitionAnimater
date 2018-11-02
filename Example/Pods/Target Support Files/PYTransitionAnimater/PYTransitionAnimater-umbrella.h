@@ -12,6 +12,7 @@
 
 #import "BaseAnimaterHeaders.h"
 #import "BasePresentNavigationController.h"
+#import "BaseModalShadowAnimationConfig.h"
 #import "BasePresentViewController.h"
 #import "BasePresentViewControllerConfiguration.h"
 #import "AnimatedTransition.h"

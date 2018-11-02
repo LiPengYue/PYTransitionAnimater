@@ -21,11 +21,13 @@
     self.config
     .setUpPresentStyle(PresentAnimationStyleRight_left)
     .setUpDismissStyle(DismissAnimationStyleLeft_Right)
-    .setUpIsLinkage(true)
+    .setUpPresentDuration(2)
+    .setUpDismissDuration(2)
+    .setUpIsLinkage(true);
     
     //shadow
-    .setUpDismissShadowOpacity(0)
-    .setUpDismissShadowColor([UIColor colorWithWhite:0 alpha:0])
+    self.shadowAnimationConfig
+    .setUpDismissShadowColor([UIColor blueColor])
     .setUpPresentShadowColor([UIColor redColor])
     .setUpDismissShadowOffset(CGSizeMake(1, 1))
     .setUpPresentShadowOffset(CGSizeMake(-10, 10));
@@ -34,6 +36,16 @@
 
     [self.view addSubview: self.button];
     self.button.frame = CGRectMake(110, 0, self.view.frame.size.width - 110, self.view.frame.size.height);
+    
+    __weak typeof(self)weakSelf = self;
+    [self presentAnimationBegin:^(UIView *toView, UIView *fromeView) {
+        [weakSelf.shadowAnimationConfig beginPresentAnimationWithDuration:2];
+    } andCompletion:^(UIView *toView, UIView *fromeView) {
+        
+    }];
+    [self dismissAnimationBegin:^(UIView *toView, UIView *fromeView) {
+        [weakSelf.shadowAnimationConfig beginDismissAnimationWithDuration:2];
+    } andCompletion:nil];
 }
 
 - (UIImageView *)button {

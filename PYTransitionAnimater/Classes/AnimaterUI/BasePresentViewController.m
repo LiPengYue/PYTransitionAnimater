@@ -10,8 +10,9 @@
 #import "BasePresentViewControllerConfiguration.h"
 #import "BasePresentNavigationController.h"
 #import "Animater.h"
-
+#import "BaseModalShadowAnimationConfig.h"
 @interface BasePresentViewController ()
+
 @property (nonatomic,strong) Animater *animation_animater;
 @property (nonatomic,strong) UIButton *animation_backgroundButton;
 @property (nonatomic,assign) CGRect animation_fromeViewFrame;
@@ -149,7 +150,6 @@
 // present animation func
 - (void) presentAnimation: (void(^)(BasePresentViewController *weakSelf))block
        andCompletionBlock:(void(^)(BasePresentViewController *weakSelf))completion {
-    [self present_animationViewShadowAnimation: self.config.presentDuration];
     [self presetionAnimationBeginBlockFunc];
     
     __weak typeof(self)weakSelf = self;
@@ -172,101 +172,9 @@
          if (completion) {
              completion(weakSelf);
          }
-         [self presentCompletion_animationViewShadowAnimation];
+
          [self presentCompletionFunc];
      }];
-}
-
-- (void) dismiss_animationViewShadowAnimation {
-    CAAnimationGroup *group = [[CAAnimationGroup alloc]init];
-    
-    CABasicAnimation *shadowOffset_anim;
-    CABasicAnimation *opacity_anim;
-    CABasicAnimation *color_anim;
-    
-    shadowOffset_anim = [self shadowAnimationWithToOffset:self.config.dismissShadowOffset
-                                             andFromValue:self.config.presentShadowOffset];
-    opacity_anim = [self shadowAnimationWithOpacity:self.config.dismissShadowOpacity];
-    color_anim = [self shadowAnimationWithColor:self.config.dismissShadowColor];
-    
-    NSMutableArray *array = [NSMutableArray arrayWithCapacity:3];
-    shadowOffset_anim ? [array addObject:shadowOffset_anim] : nil;
-    opacity_anim ? [array addObject:opacity_anim] : nil;
-    color_anim ? [array addObject:color_anim] : nil;
-    group.animations = array.copy;
-    
-    group.duration = self.config.dismissDuration;
-    group.removedOnCompletion = NO;
-    group.fillMode = kCAFillModeForwards;
-    group.beginTime = 0;
-    
-    [self.animationView.layer addAnimation:group forKey:@"group"];
-}
-
-- (void) presentCompletion_animationViewShadowAnimation {
-    [self present_animationViewShadowAnimation: 0.3];
-}
-
-- (void) present_animationViewShadowAnimation: (CGFloat)duration {
-    
-    self.animationView.layer.shadowOpacity = self.config.dismissShadowOpacity;
-    
-    CAAnimationGroup *group = [[CAAnimationGroup alloc]init];
-    
-    CABasicAnimation *shadowOffset_anim;
-    CABasicAnimation *opacity_anim;
-    CABasicAnimation *color_anim;
-    
-    shadowOffset_anim = [self shadowAnimationWithToOffset:self.config.presentShadowOffset
-                                             andFromValue:self.config.dismissShadowOffset];
-    opacity_anim = [self shadowAnimationWithOpacity:self.config.presentShadowOpacity];
-    color_anim = [self shadowAnimationWithColor:self.config.presentShadowColor];
-    
-    NSMutableArray *array = [NSMutableArray arrayWithCapacity:3];
-    shadowOffset_anim ? [array addObject:shadowOffset_anim] : nil;
-    opacity_anim ? [array addObject:opacity_anim] : nil;
-    color_anim ? [array addObject:color_anim] : nil;
-    group.animations = array.copy;
-    
-    group.duration = duration;
-    group.removedOnCompletion = NO;
-    group.fillMode = kCAFillModeForwards;
-    group.beginTime = 0;
-    
-    [self.animationView.layer addAnimation:group forKey:@"group"];
-}
-
-- (CABasicAnimation *) createBasicAnimationWithKey: (NSString *)key {
-    CABasicAnimation *anim = [CABasicAnimation animationWithKeyPath:key];
-    anim.removedOnCompletion = NO;
-    anim.fillMode = kCAFillModeForwards;
-    return anim;
-}
-
-- (CABasicAnimation *) shadowAnimationWithToOffset: (CGSize)toOffset andFromValue: (CGSize) fromOffset {
-    if (CGSizeEqualToSize(fromOffset, CGSizeZero)
-        && CGSizeEqualToSize(toOffset, CGSizeZero)) {
-        return nil;
-    }
-    
-    CABasicAnimation *shadowOffset_anim = [self createBasicAnimationWithKey:@"shadowOffset"];
-    shadowOffset_anim.fromValue = [NSValue valueWithCGSize:fromOffset];
-    shadowOffset_anim.toValue = [NSValue valueWithCGSize:toOffset];
-    //    self.animationView.layer.shadowOffset = toOffset;
-    return shadowOffset_anim;
-}
-
-- (CABasicAnimation *) shadowAnimationWithOpacity: (CGFloat) opacity {
-    if (opacity < 0) { return nil; }
-    CABasicAnimation *opacity_anim = [self createBasicAnimationWithKey:@"shadowOpacity"];
-    self.animationView.layer.shadowOpacity = opacity;
-    return opacity_anim;
-}
-- (CABasicAnimation *) shadowAnimationWithColor: (UIColor *)color {
-    if (!color) return nil;
-    CABasicAnimation *color_anim = [self createBasicAnimationWithKey:@"shadowColor"];
-    self.animationView.layer.shadowColor = color.CGColor;
-    return color_anim;
 }
 
 - (void) presentCompletionFunc {
@@ -373,7 +281,7 @@
 // dismiss animation func
 - (void) dismissAnimation:(void(^)(BasePresentViewController *weakSelf))block
        andCompletionBlock:(void(^)(BasePresentViewController *weakSelf))completion {
-    [self dismiss_animationViewShadowAnimation];
+    
     [self dismissAnimationBeginBlockFunc];
     
     __weak typeof(self)weakSelf = self;
@@ -516,9 +424,19 @@
 }
 
 // MARK: properties get && set
+
+- (BaseModalShadowAnimationConfig *)shadowAnimationConfig {
+    if (!_shadowAnimationConfig) {
+         _shadowAnimationConfig = [[BaseModalShadowAnimationConfig alloc]init];
+         _shadowAnimationConfig.shadowAnimationView = self.animationView;
+    }
+    return _shadowAnimationConfig;
+}
+
 - (void) setAnimationView:(UIView *)animationView {
     _animationView = animationView;
     [self getPresentNavigationController].animationView = animationView;
+    _shadowAnimationConfig.shadowAnimationView = animationView;
 }
 
 - (Animater *) animation_animater {

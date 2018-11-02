@@ -10,6 +10,7 @@
 
 @class BasePresentNavigationController;
 @class BasePresentViewControllerConfiguration;
+@class BaseModalShadowAnimationConfig;
 
 typedef void(^ BasicAnimationBlock)(CABasicAnimation *animation);
 
@@ -29,6 +30,7 @@ typedef void(^ BasicAnimationBlock)(CABasicAnimation *animation);
 
 /// 其他配置
 @property (nonatomic,strong) BasePresentViewControllerConfiguration *config;
+@property (nonatomic,strong) BaseModalShadowAnimationConfig *shadowAnimationConfig;
 
 /**
  * 将要dismiss的时候调用
@@ -81,6 +83,7 @@ typedef void(^ BasicAnimationBlock)(CABasicAnimation *animation);
 //- (void) dismissBeginBasicAnimation: (BasicAnimationBlock) dismiss;
 @property (nonatomic,weak) BasePresentNavigationController *presentNavigationController;
 - (BasePresentNavigationController *) addNavigationController;
+
 @end
 
 

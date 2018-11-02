@@ -9,6 +9,7 @@
 #import "BasePresentNavigationController.h"
 #import "BasePresentViewController.h"
 #import "BasePresentViewControllerConfiguration.h"
+#import "BaseModalShadowAnimationConfig.h"
 @interface BaseAnimaterHeaders : NSObject
 
 @end
