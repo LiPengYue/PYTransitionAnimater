@@ -308,7 +308,7 @@
 			files = (
 			);
 			inputPaths = (
-				"${SRCROOT}/Pods/Target Support Files/Pods-PYTransitionAnimater_Example/Pods-PYTransitionAnimater_Example-frameworks.sh",
+				"${PODS_ROOT}/Target Support Files/Pods-PYTransitionAnimater_Example/Pods-PYTransitionAnimater_Example-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/PYTransitionAnimater/PYTransitionAnimater.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
@@ -317,7 +317,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-PYTransitionAnimater_Example/Pods-PYTransitionAnimater_Example-frameworks.sh\"\n";
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-PYTransitionAnimater_Example/Pods-PYTransitionAnimater_Example-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		DB46195CA3B8082C6825C327 /* [CP] Check Pods Manifest.lock */ = {
