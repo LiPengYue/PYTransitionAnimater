@@ -1,12 +1,12 @@
 
 Pod::Spec.new do |s|
 s.name             = 'PYTransitionAnimater'
-s.version          = '0.2.4'
+s.version          = '0.3.0'
 s.summary          = '关于转场动画的工具'
 
 s.description      = <<-DESC
 转场动画的工具类，block设置动画，有默认动画，枚举配置。
-DESC
+DES
 
 s.homepage         = 'https://github.com/LiPengYue/PYTransitionAnimater'
 s.license          = { :type => 'MIT', :file => 'LICENSE' }
