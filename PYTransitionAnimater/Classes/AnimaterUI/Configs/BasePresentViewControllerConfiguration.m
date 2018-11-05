@@ -35,14 +35,14 @@
     return self;
 }
 
-- (BasePresentViewControllerConfiguration *(^)(PresentAnimationStyle style))setUpPresentStyle {
-    return ^(PresentAnimationStyle style) {
+- (BasePresentViewControllerConfiguration *(^)(NSInteger style))setUpPresentStyle {
+    return ^(NSInteger style) {
         self.presentStyle = style;
         return self;
     };
 }
-- (BasePresentViewControllerConfiguration *(^)(DismissAnimationStyle style)) setUpDismissStyle {
-    return ^(DismissAnimationStyle style) {
+- (BasePresentViewControllerConfiguration *(^)(NSInteger style)) setUpDismissStyle {
+    return ^(NSInteger style) {
         self.dismissStyle = style;
         return self;
     };

@@ -7,30 +7,38 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		05734A3844AA380F995B4758DE1F6238 /* BaseAnimaterHeaders.m in Sources */ = {isa = PBXBuildFile; fileRef = F692927284BD51EE47ACA5875C1338D0 /* BaseAnimaterHeaders.m */; };
 		070EF18ACEBF5181795B6412AC8B9E76 /* Pods-PYTransitionAnimater_Tests-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = DF72207E49A2E8BF684BEAA184CF01F6 /* Pods-PYTransitionAnimater_Tests-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		0EF961B941F6A19F43480CDE61D3EC78 /* Animater.m in Sources */ = {isa = PBXBuildFile; fileRef = BCDD5237C9A0A155AFC50DC50B0F5F39 /* Animater.m */; };
-		27A7E4878B7B75C1DBC92AD5C959C194 /* BasePresentViewController.h in Headers */ = {isa = PBXBuildFile; fileRef = C9574D1237E30B33DD596520389871DB /* BasePresentViewController.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		2D6CF5DD544D1F508FB5CE87999DB405 /* BasePresentViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C2FFBBB490F3C3B86A5EEA414793DE27 /* BasePresentViewController.m */; };
-		3782546529F9E7A66F2F02A4B321A218 /* ReplaceMe.m in Sources */ = {isa = PBXBuildFile; fileRef = 04FF2935B9B417B35AD1872E41B98355 /* ReplaceMe.m */; };
-		3F51B214A09B8F9CA96704A4FADB25F3 /* BaseModalShadowAnimationConfig.h in Headers */ = {isa = PBXBuildFile; fileRef = 1348FD0264AC66D18055F3FC6B86A1BE /* BaseModalShadowAnimationConfig.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		465B163407E3F952F83088F00F35751F /* BasePresentNavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2304A5A015FEDFC5332385892B9404FD /* BasePresentNavigationController.m */; };
+		0A6A5FE0967A54F55ADE42257FF0909D /* BasePresentNavigationController.h in Headers */ = {isa = PBXBuildFile; fileRef = 19D79365A4580341D784373D6B2E3E35 /* BasePresentNavigationController.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		0ABF3E0B55DE8725DDE216735AD0686D /* PYTransitionAnimater-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 35B9469A68EDAE5CB6EDA28E9B9EEA53 /* PYTransitionAnimater-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		0BEEA0DCF746D31D0DC57333FA78CF31 /* BasePresentViewControllerConfiguration.m in Sources */ = {isa = PBXBuildFile; fileRef = 1C173399D3B1BFDDD1240F9B3418CEBC /* BasePresentViewControllerConfiguration.m */; };
+		1028789E734B712AC37CE119BE08F797 /* BaseAnimaterHeaders.h in Headers */ = {isa = PBXBuildFile; fileRef = 2B988BA757EFE91A56EFD7C8EA69AFC5 /* BaseAnimaterHeaders.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		118D8153FFCA648DE017D936F09CD8CD /* Animater.m in Sources */ = {isa = PBXBuildFile; fileRef = A085B61C90C6E6B4B823F01014259F2A /* Animater.m */; };
+		2D565CCC0B1BF094B8423F96989DDF0D /* BaseModalShadowAnimationConfig.m in Sources */ = {isa = PBXBuildFile; fileRef = 8069285EC6C6C38EA99D0B14C1771479 /* BaseModalShadowAnimationConfig.m */; };
 		4DA753D5E2E5213BD0559A7BA1825E6D /* Pods-PYTransitionAnimater_Example-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = C31A88CE84190CDBB5198F33EF5A7151 /* Pods-PYTransitionAnimater_Example-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		59DB3D75B61B1744161683CE15785D05 /* BaseAnimaterHeaders.h in Headers */ = {isa = PBXBuildFile; fileRef = 7747E7EA5766A962A7D5DDD4916855FB /* BaseAnimaterHeaders.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		5F2DC55B4E624A9D32FA2F52C40B985E /* BaseAnimaterHeaders.m in Sources */ = {isa = PBXBuildFile; fileRef = 28311262C48D75B720C64375966E7F37 /* BaseAnimaterHeaders.m */; };
-		5FB9C95D881ED61B699C03C983CE1911 /* PYTransitionAnimater-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = AB73B5E8DFE50FF246FAD63F5F874E19 /* PYTransitionAnimater-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		6498AC83AE121A58C219716D40675353 /* Animater.h in Headers */ = {isa = PBXBuildFile; fileRef = C3870E01357322618A8C39D77E6CB66E /* Animater.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		66217F65289B1C507DE2C88193309AEA /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D6DFF15000AFE2A371BF499E7AFDA808 /* Foundation.framework */; };
+		70DB3E416E5163B0A62D8574DD5A22E7 /* BaseAnimationHandler.m in Sources */ = {isa = PBXBuildFile; fileRef = C644A0F0B1E830E6C11A44012F78AFD3 /* BaseAnimationHandler.m */; };
+		78A7592ACEEBC63771FE088163ED0D5A /* AnimatedTransition.m in Sources */ = {isa = PBXBuildFile; fileRef = 5C26F949770A3739B8A90BE3E89AC176 /* AnimatedTransition.m */; };
+		7F684423525499703193F6D8665A17BC /* BaseModalShadowAnimationConfig.h in Headers */ = {isa = PBXBuildFile; fileRef = 718D7654A8374283D214DED5F49404D1 /* BaseModalShadowAnimationConfig.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		81BFFE2201767E3D3BC05C6E56AEE6AD /* BasePresentViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E974E06D89996C1D32FEC5B4E4232A84 /* BasePresentViewController.m */; };
+		88412C4C88B75D6DC3E3E38EA5DA95BE /* BasePresentAnimationHandler.h in Headers */ = {isa = PBXBuildFile; fileRef = 9867CF408C39E45801B861791C6249C1 /* BasePresentAnimationHandler.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		920B420AB77537EC5D1219986E2FDBBA /* BasePresentNavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6205157D811714DB597FBAEA22E915DB /* BasePresentNavigationController.m */; };
+		93158961475CC74C8F4CA8EB1D029DF3 /* ReplaceMe.m in Sources */ = {isa = PBXBuildFile; fileRef = EB10FD7231DC5734842921D5D2E5910E /* ReplaceMe.m */; };
 		996807D2B47B50BF86853E10163EE24D /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D6DFF15000AFE2A371BF499E7AFDA808 /* Foundation.framework */; };
 		A33DC8E44BFC893FF32DEEB275391BA5 /* Pods-PYTransitionAnimater_Tests-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E440BA91B39D55A7C931D490436E6D0 /* Pods-PYTransitionAnimater_Tests-dummy.m */; };
-		A75389DBB9A7F4EA2162209FAF27645F /* PYTransitionAnimater-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 4602442ADA74AC80718DF3B2C73C046E /* PYTransitionAnimater-dummy.m */; };
+		A422DE7A07A852336F268623A0DB793E /* BasePresentAnimationHandler.m in Sources */ = {isa = PBXBuildFile; fileRef = BC86A3D0FC7432DE84EABAD3202329C8 /* BasePresentAnimationHandler.m */; };
+		A6FBA1C8FB2AD4996C359755F865D648 /* AnimatedTransition.h in Headers */ = {isa = PBXBuildFile; fileRef = DE7CBFEC51A10FA08317F20E42BE9818 /* AnimatedTransition.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		A7AADF63C80F68E8DF35B612368D6A3F /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D6DFF15000AFE2A371BF499E7AFDA808 /* Foundation.framework */; };
-		C7AD254C93B82EB293D44009B4D8F19C /* AnimatedTransition.h in Headers */ = {isa = PBXBuildFile; fileRef = 71D53E0C93D1E1597CB098EB5973539D /* AnimatedTransition.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		C941B363109991079D82989DF7E0F477 /* AnimatedTransition.m in Sources */ = {isa = PBXBuildFile; fileRef = 9306AB327A30A627BEAA1FD272A01841 /* AnimatedTransition.m */; };
-		CB02D46CFC4CF4147817AD227E1B8013 /* BasePresentViewControllerConfiguration.h in Headers */ = {isa = PBXBuildFile; fileRef = FAFD49291A8C706010E71F78219D88BA /* BasePresentViewControllerConfiguration.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		CF1ABDEF13FA47BBB962B29C248FEDA3 /* BasePresentNavigationController.h in Headers */ = {isa = PBXBuildFile; fileRef = 4B7ECA22065DC6CD35CDA3C2C1586A0F /* BasePresentNavigationController.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		D33369331FD8A89CA3D6D74BB1449E93 /* BaseModalShadowAnimationConfig.m in Sources */ = {isa = PBXBuildFile; fileRef = 03CF8B559AB4ECC6ECFDAA6B3EDD5492 /* BaseModalShadowAnimationConfig.m */; };
+		ABDB912066544EDFDA4411F3931A6BAA /* BaseProxyWeakHandler.m in Sources */ = {isa = PBXBuildFile; fileRef = 592746A549F7D65CA57780E1E25B06DB /* BaseProxyWeakHandler.m */; };
+		C3900E89183E487BF1EC5BE20702F798 /* BaseDismissAnimationHandler.h in Headers */ = {isa = PBXBuildFile; fileRef = 5DEF73517BE5598E019A02B2E4295966 /* BaseDismissAnimationHandler.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		CE2E244409A7E4FA644CF765EA396C8C /* BasePresentViewControllerConfiguration.h in Headers */ = {isa = PBXBuildFile; fileRef = 80059EFE4A4A062C632CB3F03ACA048B /* BasePresentViewControllerConfiguration.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		D2AA5FFACEEBA980FD7F3673BA45642C /* BaseProxyWeakHandler.h in Headers */ = {isa = PBXBuildFile; fileRef = 281D98F2C69E7AFB4F6288624342A9A1 /* BaseProxyWeakHandler.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		D5B9A11F6A9BB678F00609F656A833D9 /* BaseDismissAnimationHandler.m in Sources */ = {isa = PBXBuildFile; fileRef = FB7CD3C5588AADFF721E87FC67B9266E /* BaseDismissAnimationHandler.m */; };
+		ED374FA0FE0FEAD79B429B2D6C804F21 /* BasePresentViewController.h in Headers */ = {isa = PBXBuildFile; fileRef = EA3FADA0D3CFACE173FDBDF32E9F3C98 /* BasePresentViewController.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		F0D498717F7357E00F23AAE0216FCD67 /* Pods-PYTransitionAnimater_Example-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = BCDD0A809B570A1E213EA6902E2CC0B9 /* Pods-PYTransitionAnimater_Example-dummy.m */; };
-		F0E909F446DFCD771B17559A132D5D32 /* Animater.h in Headers */ = {isa = PBXBuildFile; fileRef = EB8718D1C3FEA72DCCDC20009329C633 /* Animater.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		F102AB33E30EBC30B0D516DDA2AC5E23 /* BasePresentViewControllerConfiguration.m in Sources */ = {isa = PBXBuildFile; fileRef = D293282EE4722A66C0EBD46E1AF41612 /* BasePresentViewControllerConfiguration.m */; };
+		F6B3AEBDAB5E5C6D323BDE8910C32BBA /* BaseAnimationHandler.h in Headers */ = {isa = PBXBuildFile; fileRef = 84485DA5C1115C9E54FB6CBD531C7DFA /* BaseAnimationHandler.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		F994DA4A357659683326A09929880EA3 /* PYTransitionAnimater-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 88CA076CA9CFD27732485779F500C35A /* PYTransitionAnimater-dummy.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -51,51 +59,59 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		03CF8B559AB4ECC6ECFDAA6B3EDD5492 /* BaseModalShadowAnimationConfig.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = BaseModalShadowAnimationConfig.m; sourceTree = "<group>"; };
-		04FF2935B9B417B35AD1872E41B98355 /* ReplaceMe.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = ReplaceMe.m; path = PYTransitionAnimater/Classes/ReplaceMe.m; sourceTree = "<group>"; };
-		05649F72544FF7C8282584A9BD2C87F6 /* PYTransitionAnimater-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "PYTransitionAnimater-Info.plist"; sourceTree = "<group>"; };
-		1348FD0264AC66D18055F3FC6B86A1BE /* BaseModalShadowAnimationConfig.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = BaseModalShadowAnimationConfig.h; sourceTree = "<group>"; };
-		1E7025D1E00EB450DB8D45461571C556 /* PYTransitionAnimater.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = PYTransitionAnimater.framework; path = PYTransitionAnimater.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		1ED421210220E3B95C6A6B2140E00082 /* PYTransitionAnimater.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = PYTransitionAnimater.xcconfig; sourceTree = "<group>"; };
-		2304A5A015FEDFC5332385892B9404FD /* BasePresentNavigationController.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = BasePresentNavigationController.m; sourceTree = "<group>"; };
-		28311262C48D75B720C64375966E7F37 /* BaseAnimaterHeaders.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = BaseAnimaterHeaders.m; sourceTree = "<group>"; };
+		19D79365A4580341D784373D6B2E3E35 /* BasePresentNavigationController.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = BasePresentNavigationController.h; sourceTree = "<group>"; };
+		1C173399D3B1BFDDD1240F9B3418CEBC /* BasePresentViewControllerConfiguration.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = BasePresentViewControllerConfiguration.m; sourceTree = "<group>"; };
+		1E7025D1E00EB450DB8D45461571C556 /* PYTransitionAnimater.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = PYTransitionAnimater.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		281D98F2C69E7AFB4F6288624342A9A1 /* BaseProxyWeakHandler.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = BaseProxyWeakHandler.h; sourceTree = "<group>"; };
+		2B54658C7DE233844C769E5E9B8D3D6E /* PYTransitionAnimater-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "PYTransitionAnimater-Info.plist"; sourceTree = "<group>"; };
+		2B988BA757EFE91A56EFD7C8EA69AFC5 /* BaseAnimaterHeaders.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = BaseAnimaterHeaders.h; sourceTree = "<group>"; };
+		35B9469A68EDAE5CB6EDA28E9B9EEA53 /* PYTransitionAnimater-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "PYTransitionAnimater-umbrella.h"; sourceTree = "<group>"; };
 		3BDF9A3EA0E129EBAD15AA01008AC00D /* Pods-PYTransitionAnimater_Example.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-PYTransitionAnimater_Example.debug.xcconfig"; sourceTree = "<group>"; };
 		3C92CE4F1012998DA03337E9B8387346 /* Pods-PYTransitionAnimater_Example-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-PYTransitionAnimater_Example-frameworks.sh"; sourceTree = "<group>"; };
 		4325D665A4AD5BB233C9798234F4B3AD /* Pods-PYTransitionAnimater_Tests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-PYTransitionAnimater_Tests.debug.xcconfig"; sourceTree = "<group>"; };
-		4602442ADA74AC80718DF3B2C73C046E /* PYTransitionAnimater-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "PYTransitionAnimater-dummy.m"; sourceTree = "<group>"; };
-		4B7ECA22065DC6CD35CDA3C2C1586A0F /* BasePresentNavigationController.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = BasePresentNavigationController.h; sourceTree = "<group>"; };
+		47E4FBD1913AA8ADC16D3338ACBE8880 /* PYTransitionAnimater.podspec */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; path = PYTransitionAnimater.podspec; sourceTree = "<group>"; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		4E809AD39F1C1B88C788D549F9D3DD4F /* Pods-PYTransitionAnimater_Example.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-PYTransitionAnimater_Example.release.xcconfig"; sourceTree = "<group>"; };
 		50FB5C5DB4DFF4C754A521078DEDD82A /* Pods-PYTransitionAnimater_Tests-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-PYTransitionAnimater_Tests-acknowledgements.markdown"; sourceTree = "<group>"; };
-		55C573E026094B556CE4F65CF985B257 /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; path = README.md; sourceTree = "<group>"; };
-		5ECF4ABC8C82B04B23F4215E0F83AB79 /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; path = LICENSE; sourceTree = "<group>"; };
+		592746A549F7D65CA57780E1E25B06DB /* BaseProxyWeakHandler.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = BaseProxyWeakHandler.m; sourceTree = "<group>"; };
+		5BA05324042DB1ACD479A8B3BBB0921C /* PYTransitionAnimater.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = PYTransitionAnimater.modulemap; sourceTree = "<group>"; };
+		5C26F949770A3739B8A90BE3E89AC176 /* AnimatedTransition.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = AnimatedTransition.m; sourceTree = "<group>"; };
+		5DEF73517BE5598E019A02B2E4295966 /* BaseDismissAnimationHandler.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = BaseDismissAnimationHandler.h; sourceTree = "<group>"; };
+		6205157D811714DB597FBAEA22E915DB /* BasePresentNavigationController.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = BasePresentNavigationController.m; sourceTree = "<group>"; };
 		6E440BA91B39D55A7C931D490436E6D0 /* Pods-PYTransitionAnimater_Tests-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-PYTransitionAnimater_Tests-dummy.m"; sourceTree = "<group>"; };
 		6FC5C337198553640BC1FD0B8AD8F35B /* Pods-PYTransitionAnimater_Example-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-PYTransitionAnimater_Example-acknowledgements.markdown"; sourceTree = "<group>"; };
-		71D53E0C93D1E1597CB098EB5973539D /* AnimatedTransition.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = AnimatedTransition.h; sourceTree = "<group>"; };
-		7747E7EA5766A962A7D5DDD4916855FB /* BaseAnimaterHeaders.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = BaseAnimaterHeaders.h; sourceTree = "<group>"; };
+		718D7654A8374283D214DED5F49404D1 /* BaseModalShadowAnimationConfig.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = BaseModalShadowAnimationConfig.h; sourceTree = "<group>"; };
 		7A0753532FB061E30A7CCFE3B2DB3721 /* Pods-PYTransitionAnimater_Example.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "Pods-PYTransitionAnimater_Example.modulemap"; sourceTree = "<group>"; };
 		7B56FE3286296783C890980C8938280F /* Pods-PYTransitionAnimater_Example-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-PYTransitionAnimater_Example-acknowledgements.plist"; sourceTree = "<group>"; };
+		80059EFE4A4A062C632CB3F03ACA048B /* BasePresentViewControllerConfiguration.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = BasePresentViewControllerConfiguration.h; sourceTree = "<group>"; };
+		8069285EC6C6C38EA99D0B14C1771479 /* BaseModalShadowAnimationConfig.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = BaseModalShadowAnimationConfig.m; sourceTree = "<group>"; };
 		80C76AF27F11A741EE6B852BD6AB8022 /* Pods-PYTransitionAnimater_Tests-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-PYTransitionAnimater_Tests-acknowledgements.plist"; sourceTree = "<group>"; };
-		9306AB327A30A627BEAA1FD272A01841 /* AnimatedTransition.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = AnimatedTransition.m; sourceTree = "<group>"; };
-		A873C3CDED66933CD4906D8913D2C597 /* Pods_PYTransitionAnimater_Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_PYTransitionAnimater_Tests.framework; path = "Pods-PYTransitionAnimater_Tests.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
-		A8E6DD8A9A67B5B77F3B5202029218CD /* PYTransitionAnimater.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = PYTransitionAnimater.modulemap; sourceTree = "<group>"; };
-		AB73B5E8DFE50FF246FAD63F5F874E19 /* PYTransitionAnimater-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "PYTransitionAnimater-umbrella.h"; sourceTree = "<group>"; };
-		B24A9CA151F53505EDC5FBA9D3E8AF25 /* PYTransitionAnimater-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "PYTransitionAnimater-prefix.pch"; sourceTree = "<group>"; };
-		B36AB396275697EEE1A5B13BA8A38FE3 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; lastKnownFileType = text; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		84485DA5C1115C9E54FB6CBD531C7DFA /* BaseAnimationHandler.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = BaseAnimationHandler.h; sourceTree = "<group>"; };
+		88CA076CA9CFD27732485779F500C35A /* PYTransitionAnimater-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "PYTransitionAnimater-dummy.m"; sourceTree = "<group>"; };
+		9867CF408C39E45801B861791C6249C1 /* BasePresentAnimationHandler.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = BasePresentAnimationHandler.h; sourceTree = "<group>"; };
+		A085B61C90C6E6B4B823F01014259F2A /* Animater.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = Animater.m; sourceTree = "<group>"; };
+		A873C3CDED66933CD4906D8913D2C597 /* Pods_PYTransitionAnimater_Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_PYTransitionAnimater_Tests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		B36AB396275697EEE1A5B13BA8A38FE3 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		BBC91BCF2E05DBE1892AD3C51D47DBCE /* PYTransitionAnimater.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = PYTransitionAnimater.xcconfig; sourceTree = "<group>"; };
+		BC86A3D0FC7432DE84EABAD3202329C8 /* BasePresentAnimationHandler.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = BasePresentAnimationHandler.m; sourceTree = "<group>"; };
 		BCDD0A809B570A1E213EA6902E2CC0B9 /* Pods-PYTransitionAnimater_Example-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-PYTransitionAnimater_Example-dummy.m"; sourceTree = "<group>"; };
-		BCDD5237C9A0A155AFC50DC50B0F5F39 /* Animater.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = Animater.m; sourceTree = "<group>"; };
-		C2FFBBB490F3C3B86A5EEA414793DE27 /* BasePresentViewController.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = BasePresentViewController.m; sourceTree = "<group>"; };
 		C31A88CE84190CDBB5198F33EF5A7151 /* Pods-PYTransitionAnimater_Example-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-PYTransitionAnimater_Example-umbrella.h"; sourceTree = "<group>"; };
-		C9574D1237E30B33DD596520389871DB /* BasePresentViewController.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = BasePresentViewController.h; sourceTree = "<group>"; };
+		C3870E01357322618A8C39D77E6CB66E /* Animater.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = Animater.h; sourceTree = "<group>"; };
+		C644A0F0B1E830E6C11A44012F78AFD3 /* BaseAnimationHandler.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = BaseAnimationHandler.m; sourceTree = "<group>"; };
 		CAF322DE765D0F566678EF905AFE3819 /* Pods-PYTransitionAnimater_Example-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-PYTransitionAnimater_Example-Info.plist"; sourceTree = "<group>"; };
-		CFAA49DB6164671C37B2281A3B8FBCE0 /* Pods_PYTransitionAnimater_Example.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_PYTransitionAnimater_Example.framework; path = "Pods-PYTransitionAnimater_Example.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
-		D293282EE4722A66C0EBD46E1AF41612 /* BasePresentViewControllerConfiguration.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = BasePresentViewControllerConfiguration.m; sourceTree = "<group>"; };
+		CB1ED8DA9905453C9A69A99587E0C5F1 /* PYTransitionAnimater-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "PYTransitionAnimater-prefix.pch"; sourceTree = "<group>"; };
+		CFAA49DB6164671C37B2281A3B8FBCE0 /* Pods_PYTransitionAnimater_Example.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_PYTransitionAnimater_Example.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		D2D43DC0785D580F003ABD7DF3304550 /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = LICENSE; sourceTree = "<group>"; };
 		D6DFF15000AFE2A371BF499E7AFDA808 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS12.0.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
-		D9A70856ABD320E72A198A993434849C /* PYTransitionAnimater.podspec */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; lastKnownFileType = text; path = PYTransitionAnimater.podspec; sourceTree = "<group>"; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		DC5A951BB7D874F5EFBF8FC5FFDF5A2B /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
+		DE7CBFEC51A10FA08317F20E42BE9818 /* AnimatedTransition.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = AnimatedTransition.h; sourceTree = "<group>"; };
 		DF72207E49A2E8BF684BEAA184CF01F6 /* Pods-PYTransitionAnimater_Tests-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-PYTransitionAnimater_Tests-umbrella.h"; sourceTree = "<group>"; };
 		E856ECE928DA818A3FD1F31A68D0C95D /* Pods-PYTransitionAnimater_Tests.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "Pods-PYTransitionAnimater_Tests.modulemap"; sourceTree = "<group>"; };
-		EB8718D1C3FEA72DCCDC20009329C633 /* Animater.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = Animater.h; sourceTree = "<group>"; };
+		E974E06D89996C1D32FEC5B4E4232A84 /* BasePresentViewController.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = BasePresentViewController.m; sourceTree = "<group>"; };
+		EA3FADA0D3CFACE173FDBDF32E9F3C98 /* BasePresentViewController.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = BasePresentViewController.h; sourceTree = "<group>"; };
+		EB10FD7231DC5734842921D5D2E5910E /* ReplaceMe.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = ReplaceMe.m; path = PYTransitionAnimater/Classes/ReplaceMe.m; sourceTree = "<group>"; };
 		F13EC8ADC57E42D07C6FCC180F04ADEA /* Pods-PYTransitionAnimater_Tests-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-PYTransitionAnimater_Tests-Info.plist"; sourceTree = "<group>"; };
-		FAFD49291A8C706010E71F78219D88BA /* BasePresentViewControllerConfiguration.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = BasePresentViewControllerConfiguration.h; sourceTree = "<group>"; };
+		F692927284BD51EE47ACA5875C1338D0 /* BaseAnimaterHeaders.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = BaseAnimaterHeaders.m; sourceTree = "<group>"; };
+		FB7CD3C5588AADFF721E87FC67B9266E /* BaseDismissAnimationHandler.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = BaseDismissAnimationHandler.m; sourceTree = "<group>"; };
 		FF44D0EBBF0335EFD1538F5C0D8B125E /* Pods-PYTransitionAnimater_Tests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-PYTransitionAnimater_Tests.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -127,12 +143,39 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		0DB5E8F99B61260972CA8525CC90BBFE /* Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				5BA05324042DB1ACD479A8B3BBB0921C /* PYTransitionAnimater.modulemap */,
+				BBC91BCF2E05DBE1892AD3C51D47DBCE /* PYTransitionAnimater.xcconfig */,
+				88CA076CA9CFD27732485779F500C35A /* PYTransitionAnimater-dummy.m */,
+				2B54658C7DE233844C769E5E9B8D3D6E /* PYTransitionAnimater-Info.plist */,
+				CB1ED8DA9905453C9A69A99587E0C5F1 /* PYTransitionAnimater-prefix.pch */,
+				35B9469A68EDAE5CB6EDA28E9B9EEA53 /* PYTransitionAnimater-umbrella.h */,
+			);
+			name = "Support Files";
+			path = "Example/Pods/Target Support Files/PYTransitionAnimater";
+			sourceTree = "<group>";
+		};
 		1A821CD6D54C4804FD1A5A78BFC2890D /* Development Pods */ = {
 			isa = PBXGroup;
 			children = (
-				980A7EA9234A3AD43970F9330C7A3247 /* PYTransitionAnimater */,
+				31FEEBB8824BED10DD9BCE8481A14B30 /* PYTransitionAnimater */,
 			);
 			name = "Development Pods";
+			sourceTree = "<group>";
+		};
+		31FEEBB8824BED10DD9BCE8481A14B30 /* PYTransitionAnimater */ = {
+			isa = PBXGroup;
+			children = (
+				EB10FD7231DC5734842921D5D2E5910E /* ReplaceMe.m */,
+				665E3090C45E7DC5CDB9E21B56A813D2 /* AnimaterUI */,
+				818D4283DA07B7885BE935E0CBBF25F7 /* Animtion */,
+				6DF2020E523F094AB41CC7F122D88DBF /* Pod */,
+				0DB5E8F99B61260972CA8525CC90BBFE /* Support Files */,
+			);
+			name = PYTransitionAnimater;
+			path = ../..;
 			sourceTree = "<group>";
 		};
 		40FBA4D4B04E8689B1E83FD2D7A91BAA /* Pods-PYTransitionAnimater_Example */ = {
@@ -160,6 +203,31 @@
 			name = iOS;
 			sourceTree = "<group>";
 		};
+		4C60DA481E7C963E72A9D59138043046 /* AnimationHandler */ = {
+			isa = PBXGroup;
+			children = (
+				84485DA5C1115C9E54FB6CBD531C7DFA /* BaseAnimationHandler.h */,
+				C644A0F0B1E830E6C11A44012F78AFD3 /* BaseAnimationHandler.m */,
+				5DEF73517BE5598E019A02B2E4295966 /* BaseDismissAnimationHandler.h */,
+				FB7CD3C5588AADFF721E87FC67B9266E /* BaseDismissAnimationHandler.m */,
+				9867CF408C39E45801B861791C6249C1 /* BasePresentAnimationHandler.h */,
+				BC86A3D0FC7432DE84EABAD3202329C8 /* BasePresentAnimationHandler.m */,
+				B28A0F77136F38CE5CB7FB6006FA49FF /* ProxyWeakHandler */,
+			);
+			path = AnimationHandler;
+			sourceTree = "<group>";
+		};
+		61FC44A4F43788A44510FB94FE243857 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				19D79365A4580341D784373D6B2E3E35 /* BasePresentNavigationController.h */,
+				6205157D811714DB597FBAEA22E915DB /* BasePresentNavigationController.m */,
+				EA3FADA0D3CFACE173FDBDF32E9F3C98 /* BasePresentViewController.h */,
+				E974E06D89996C1D32FEC5B4E4232A84 /* BasePresentViewController.m */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
 		65E3B57B59377BEF553A9E0E4136EA98 /* Pods-PYTransitionAnimater_Tests */ = {
 			isa = PBXGroup;
 			children = (
@@ -174,6 +242,29 @@
 			);
 			name = "Pods-PYTransitionAnimater_Tests";
 			path = "Target Support Files/Pods-PYTransitionAnimater_Tests";
+			sourceTree = "<group>";
+		};
+		665E3090C45E7DC5CDB9E21B56A813D2 /* AnimaterUI */ = {
+			isa = PBXGroup;
+			children = (
+				2B988BA757EFE91A56EFD7C8EA69AFC5 /* BaseAnimaterHeaders.h */,
+				F692927284BD51EE47ACA5875C1338D0 /* BaseAnimaterHeaders.m */,
+				4C60DA481E7C963E72A9D59138043046 /* AnimationHandler */,
+				EB7F7C0284AAD6E4B18BFE03E6BC6771 /* Configs */,
+				61FC44A4F43788A44510FB94FE243857 /* Controller */,
+			);
+			name = AnimaterUI;
+			path = PYTransitionAnimater/Classes/AnimaterUI;
+			sourceTree = "<group>";
+		};
+		6DF2020E523F094AB41CC7F122D88DBF /* Pod */ = {
+			isa = PBXGroup;
+			children = (
+				D2D43DC0785D580F003ABD7DF3304550 /* LICENSE */,
+				47E4FBD1913AA8ADC16D3338ACBE8880 /* PYTransitionAnimater.podspec */,
+				DC5A951BB7D874F5EFBF8FC5FFDF5A2B /* README.md */,
+			);
+			name = Pod;
 			sourceTree = "<group>";
 		};
 		7C4141AD94088838B6244761DBAA30DA /* Targets Support Files */ = {
@@ -196,39 +287,25 @@
 			);
 			sourceTree = "<group>";
 		};
-		980A7EA9234A3AD43970F9330C7A3247 /* PYTransitionAnimater */ = {
+		818D4283DA07B7885BE935E0CBBF25F7 /* Animtion */ = {
 			isa = PBXGroup;
 			children = (
-				04FF2935B9B417B35AD1872E41B98355 /* ReplaceMe.m */,
-				EC523A6E840F8A687CB06C17EB84B3AF /* AnimaterUI */,
-				BAB1AF6B0A6F3CA75234D9ECF152E3B6 /* Animtion */,
-				BC5AAFBA77B6C6A9AD0857EFFC0E969F /* Pod */,
-				F4847A3731A73B3B1ADA8309615E223C /* Support Files */,
-			);
-			name = PYTransitionAnimater;
-			path = ../..;
-			sourceTree = "<group>";
-		};
-		A06AD34882B8FDC1BDAB2FB6CA841217 /* BasePresentShadowAnimationConfig */ = {
-			isa = PBXGroup;
-			children = (
-				1348FD0264AC66D18055F3FC6B86A1BE /* BaseModalShadowAnimationConfig.h */,
-				03CF8B559AB4ECC6ECFDAA6B3EDD5492 /* BaseModalShadowAnimationConfig.m */,
-			);
-			name = BasePresentShadowAnimationConfig;
-			path = BasePresentShadowAnimationConfig;
-			sourceTree = "<group>";
-		};
-		BAB1AF6B0A6F3CA75234D9ECF152E3B6 /* Animtion */ = {
-			isa = PBXGroup;
-			children = (
-				71D53E0C93D1E1597CB098EB5973539D /* AnimatedTransition.h */,
-				9306AB327A30A627BEAA1FD272A01841 /* AnimatedTransition.m */,
-				EB8718D1C3FEA72DCCDC20009329C633 /* Animater.h */,
-				BCDD5237C9A0A155AFC50DC50B0F5F39 /* Animater.m */,
+				DE7CBFEC51A10FA08317F20E42BE9818 /* AnimatedTransition.h */,
+				5C26F949770A3739B8A90BE3E89AC176 /* AnimatedTransition.m */,
+				C3870E01357322618A8C39D77E6CB66E /* Animater.h */,
+				A085B61C90C6E6B4B823F01014259F2A /* Animater.m */,
 			);
 			name = Animtion;
 			path = PYTransitionAnimater/Classes/Animtion;
+			sourceTree = "<group>";
+		};
+		B28A0F77136F38CE5CB7FB6006FA49FF /* ProxyWeakHandler */ = {
+			isa = PBXGroup;
+			children = (
+				281D98F2C69E7AFB4F6288624342A9A1 /* BaseProxyWeakHandler.h */,
+				592746A549F7D65CA57780E1E25B06DB /* BaseProxyWeakHandler.m */,
+			);
+			path = ProxyWeakHandler;
 			sourceTree = "<group>";
 		};
 		BC3CA7F9E30CC8F7E2DD044DD34432FC /* Frameworks */ = {
@@ -239,14 +316,13 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
-		BC5AAFBA77B6C6A9AD0857EFFC0E969F /* Pod */ = {
+		D4334E034C8463D4723D978F26B69A2E /* BasePresentShadowAnimationConfig */ = {
 			isa = PBXGroup;
 			children = (
-				5ECF4ABC8C82B04B23F4215E0F83AB79 /* LICENSE */,
-				D9A70856ABD320E72A198A993434849C /* PYTransitionAnimater.podspec */,
-				55C573E026094B556CE4F65CF985B257 /* README.md */,
+				718D7654A8374283D214DED5F49404D1 /* BaseModalShadowAnimationConfig.h */,
+				8069285EC6C6C38EA99D0B14C1771479 /* BaseModalShadowAnimationConfig.m */,
 			);
-			name = Pod;
+			path = BasePresentShadowAnimationConfig;
 			sourceTree = "<group>";
 		};
 		E51B0BA78DBDDFD7E7CE57A59DDFE64F /* Products */ = {
@@ -259,55 +335,19 @@
 			name = Products;
 			sourceTree = "<group>";
 		};
-		EC523A6E840F8A687CB06C17EB84B3AF /* AnimaterUI */ = {
+		EB7F7C0284AAD6E4B18BFE03E6BC6771 /* Configs */ = {
 			isa = PBXGroup;
 			children = (
-				7747E7EA5766A962A7D5DDD4916855FB /* BaseAnimaterHeaders.h */,
-				28311262C48D75B720C64375966E7F37 /* BaseAnimaterHeaders.m */,
-				4B7ECA22065DC6CD35CDA3C2C1586A0F /* BasePresentNavigationController.h */,
-				2304A5A015FEDFC5332385892B9404FD /* BasePresentNavigationController.m */,
-				C9574D1237E30B33DD596520389871DB /* BasePresentViewController.h */,
-				C2FFBBB490F3C3B86A5EEA414793DE27 /* BasePresentViewController.m */,
-				FAFD49291A8C706010E71F78219D88BA /* BasePresentViewControllerConfiguration.h */,
-				D293282EE4722A66C0EBD46E1AF41612 /* BasePresentViewControllerConfiguration.m */,
-				A06AD34882B8FDC1BDAB2FB6CA841217 /* BasePresentShadowAnimationConfig */,
+				80059EFE4A4A062C632CB3F03ACA048B /* BasePresentViewControllerConfiguration.h */,
+				1C173399D3B1BFDDD1240F9B3418CEBC /* BasePresentViewControllerConfiguration.m */,
+				D4334E034C8463D4723D978F26B69A2E /* BasePresentShadowAnimationConfig */,
 			);
-			name = AnimaterUI;
-			path = PYTransitionAnimater/Classes/AnimaterUI;
-			sourceTree = "<group>";
-		};
-		F4847A3731A73B3B1ADA8309615E223C /* Support Files */ = {
-			isa = PBXGroup;
-			children = (
-				A8E6DD8A9A67B5B77F3B5202029218CD /* PYTransitionAnimater.modulemap */,
-				1ED421210220E3B95C6A6B2140E00082 /* PYTransitionAnimater.xcconfig */,
-				4602442ADA74AC80718DF3B2C73C046E /* PYTransitionAnimater-dummy.m */,
-				05649F72544FF7C8282584A9BD2C87F6 /* PYTransitionAnimater-Info.plist */,
-				B24A9CA151F53505EDC5FBA9D3E8AF25 /* PYTransitionAnimater-prefix.pch */,
-				AB73B5E8DFE50FF246FAD63F5F874E19 /* PYTransitionAnimater-umbrella.h */,
-			);
-			name = "Support Files";
-			path = "Example/Pods/Target Support Files/PYTransitionAnimater";
+			path = Configs;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
 
 /* Begin PBXHeadersBuildPhase section */
-		1B00BD99A6CF1ADB60DFB07DC40FED2F /* Headers */ = {
-			isa = PBXHeadersBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				C7AD254C93B82EB293D44009B4D8F19C /* AnimatedTransition.h in Headers */,
-				F0E909F446DFCD771B17559A132D5D32 /* Animater.h in Headers */,
-				59DB3D75B61B1744161683CE15785D05 /* BaseAnimaterHeaders.h in Headers */,
-				3F51B214A09B8F9CA96704A4FADB25F3 /* BaseModalShadowAnimationConfig.h in Headers */,
-				CF1ABDEF13FA47BBB962B29C248FEDA3 /* BasePresentNavigationController.h in Headers */,
-				27A7E4878B7B75C1DBC92AD5C959C194 /* BasePresentViewController.h in Headers */,
-				CB02D46CFC4CF4147817AD227E1B8013 /* BasePresentViewControllerConfiguration.h in Headers */,
-				5FB9C95D881ED61B699C03C983CE1911 /* PYTransitionAnimater-umbrella.h in Headers */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 		4E62D5DDC21DFCE03FAF167C211D694E /* Headers */ = {
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
@@ -324,6 +364,25 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		E8D20CD8F21BE2663A3DC8A66A864DE7 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A6FBA1C8FB2AD4996C359755F865D648 /* AnimatedTransition.h in Headers */,
+				6498AC83AE121A58C219716D40675353 /* Animater.h in Headers */,
+				1028789E734B712AC37CE119BE08F797 /* BaseAnimaterHeaders.h in Headers */,
+				F6B3AEBDAB5E5C6D323BDE8910C32BBA /* BaseAnimationHandler.h in Headers */,
+				C3900E89183E487BF1EC5BE20702F798 /* BaseDismissAnimationHandler.h in Headers */,
+				7F684423525499703193F6D8665A17BC /* BaseModalShadowAnimationConfig.h in Headers */,
+				88412C4C88B75D6DC3E3E38EA5DA95BE /* BasePresentAnimationHandler.h in Headers */,
+				0A6A5FE0967A54F55ADE42257FF0909D /* BasePresentNavigationController.h in Headers */,
+				ED374FA0FE0FEAD79B429B2D6C804F21 /* BasePresentViewController.h in Headers */,
+				CE2E244409A7E4FA644CF765EA396C8C /* BasePresentViewControllerConfiguration.h in Headers */,
+				D2AA5FFACEEBA980FD7F3673BA45642C /* BaseProxyWeakHandler.h in Headers */,
+				0ABF3E0B55DE8725DDE216735AD0686D /* PYTransitionAnimater-umbrella.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXHeadersBuildPhase section */
 
 /* Begin PBXNativeTarget section */
@@ -331,8 +390,8 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = F713A59C674FB7E0D67397D313B980EA /* Build configuration list for PBXNativeTarget "PYTransitionAnimater" */;
 			buildPhases = (
-				1B00BD99A6CF1ADB60DFB07DC40FED2F /* Headers */,
-				CF45982A7DB50A33C3950F35B4402EC9 /* Sources */,
+				E8D20CD8F21BE2663A3DC8A66A864DE7 /* Headers */,
+				DFBCAC4E4F1575961471E26B0FF41669 /* Sources */,
 				684694459D0CCDAFBF1BABAB6EE926BF /* Frameworks */,
 				C98DE80A01F77DB4FE69DCF842FEC58D /* Resources */,
 			);
@@ -444,19 +503,23 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		CF45982A7DB50A33C3950F35B4402EC9 /* Sources */ = {
+		DFBCAC4E4F1575961471E26B0FF41669 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				C941B363109991079D82989DF7E0F477 /* AnimatedTransition.m in Sources */,
-				0EF961B941F6A19F43480CDE61D3EC78 /* Animater.m in Sources */,
-				5F2DC55B4E624A9D32FA2F52C40B985E /* BaseAnimaterHeaders.m in Sources */,
-				D33369331FD8A89CA3D6D74BB1449E93 /* BaseModalShadowAnimationConfig.m in Sources */,
-				465B163407E3F952F83088F00F35751F /* BasePresentNavigationController.m in Sources */,
-				2D6CF5DD544D1F508FB5CE87999DB405 /* BasePresentViewController.m in Sources */,
-				F102AB33E30EBC30B0D516DDA2AC5E23 /* BasePresentViewControllerConfiguration.m in Sources */,
-				A75389DBB9A7F4EA2162209FAF27645F /* PYTransitionAnimater-dummy.m in Sources */,
-				3782546529F9E7A66F2F02A4B321A218 /* ReplaceMe.m in Sources */,
+				78A7592ACEEBC63771FE088163ED0D5A /* AnimatedTransition.m in Sources */,
+				118D8153FFCA648DE017D936F09CD8CD /* Animater.m in Sources */,
+				05734A3844AA380F995B4758DE1F6238 /* BaseAnimaterHeaders.m in Sources */,
+				70DB3E416E5163B0A62D8574DD5A22E7 /* BaseAnimationHandler.m in Sources */,
+				D5B9A11F6A9BB678F00609F656A833D9 /* BaseDismissAnimationHandler.m in Sources */,
+				2D565CCC0B1BF094B8423F96989DDF0D /* BaseModalShadowAnimationConfig.m in Sources */,
+				A422DE7A07A852336F268623A0DB793E /* BasePresentAnimationHandler.m in Sources */,
+				920B420AB77537EC5D1219986E2FDBBA /* BasePresentNavigationController.m in Sources */,
+				81BFFE2201767E3D3BC05C6E56AEE6AD /* BasePresentViewController.m in Sources */,
+				0BEEA0DCF746D31D0DC57333FA78CF31 /* BasePresentViewControllerConfiguration.m in Sources */,
+				ABDB912066544EDFDA4411F3931A6BAA /* BaseProxyWeakHandler.m in Sources */,
+				F994DA4A357659683326A09929880EA3 /* PYTransitionAnimater-dummy.m in Sources */,
+				93158961475CC74C8F4CA8EB1D029DF3 /* ReplaceMe.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -620,7 +683,7 @@
 		};
 		69774CA30893857F25527D8EC8A8A478 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 1ED421210220E3B95C6A6B2140E00082 /* PYTransitionAnimater.xcconfig */;
+			baseConfigurationReference = BBC91BCF2E05DBE1892AD3C51D47DBCE /* PYTransitionAnimater.xcconfig */;
 			buildSettings = {
 				CODE_SIGN_IDENTITY = "";
 				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
@@ -701,8 +764,7 @@
 				MTL_FAST_MATH = YES;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				STRIP_INSTALLED_PRODUCT = NO;
-				SWIFT_COMPILATION_MODE = wholemodule;
-				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
 				SWIFT_VERSION = 4.2;
 				SYMROOT = "${SRCROOT}/../build";
 			};
@@ -710,7 +772,7 @@
 		};
 		72E044280C6310DE573974967C50CE0F /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 1ED421210220E3B95C6A6B2140E00082 /* PYTransitionAnimater.xcconfig */;
+			baseConfigurationReference = BBC91BCF2E05DBE1892AD3C51D47DBCE /* PYTransitionAnimater.xcconfig */;
 			buildSettings = {
 				CODE_SIGN_IDENTITY = "";
 				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";

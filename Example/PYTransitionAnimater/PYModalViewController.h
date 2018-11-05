@@ -8,6 +8,7 @@
 
 #import <UIKit/UIKit.h>
 #import <PYTransitionAnimater/BaseAnimaterHeaders.h>
-@interface PYModalViewController : BasePresentViewController
+#import "PYCustomPresentViewController.h"
+@interface PYModalViewController : PYCustomPresentViewController
 
 @end

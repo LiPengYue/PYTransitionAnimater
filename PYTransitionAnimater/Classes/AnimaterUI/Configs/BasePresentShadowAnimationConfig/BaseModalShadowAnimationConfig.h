@@ -60,4 +60,16 @@
 - (void) beginPresentAnimationWithDuration: (CGFloat) duration;
 /// 开启动画 dismiss 阴影动画
 - (void) beginDismissAnimationWithDuration: (CGFloat) duration;
+
+
+/**
+kCAMediaTimingFunctionLinear（线性）：匀速，给你一个相对静态的感觉,这个是默认的动画行为。
+
+kCAMediaTimingFunctionEaseIn（渐进）：动画缓慢进入，然后加速离开
+
+kCAMediaTimingFunctionEaseOut（渐出）：动画全速进入，然后减速的到达目的地
+
+kCAMediaTimingFunctionEaseInEaseOut（渐进渐出）：动画缓慢的进入，中间加速，然后减速的到达目的地。
+*/
+
 @end

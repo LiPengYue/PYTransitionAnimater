@@ -9,6 +9,7 @@
 #import "PYViewController.h"
 #import "PYModalViewController.h"
 #import <PYTransitionAnimater/BaseAnimaterHeaders.h>
+
 @interface PYViewController ()
 @property (nonatomic,strong) UIImageView *button;
 @property (nonatomic,strong) UIButton *modalNavigationVC;
@@ -70,6 +71,7 @@
 }
 - (void)click_modalNavigationVCButton {
     BasePresentNavigationController *vc = [PYModalViewController new].presentNavigationController;
+    
     [self presentViewController: vc animated:true completion:nil];
 }
 @end

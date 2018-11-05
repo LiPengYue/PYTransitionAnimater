@@ -18,11 +18,11 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
  
-    self.config
-    .setUpPresentStyle(PresentAnimationStyleRight_left)
+    self.presentConfig
+    .setUpPresentStyle(PresentAnimationStyle_Shap_round)
     .setUpDismissStyle(DismissAnimationStyleLeft_Right)
-    .setUpPresentDuration(2)
-    .setUpDismissDuration(2)
+    .setUpPresentDuration(0.4)
+    .setUpDismissDuration(0.4)
     .setUpIsLinkage(true);
     
     //shadow
@@ -39,13 +39,15 @@
     
     __weak typeof(self)weakSelf = self;
     [self presentAnimationBegin:^(UIView *toView, UIView *fromeView) {
-        [weakSelf.shadowAnimationConfig beginPresentAnimationWithDuration:2];
     } andCompletion:^(UIView *toView, UIView *fromeView) {
+        [weakSelf.shadowAnimationConfig beginPresentAnimationWithDuration:1];
         
     }];
     [self dismissAnimationBegin:^(UIView *toView, UIView *fromeView) {
         [weakSelf.shadowAnimationConfig beginDismissAnimationWithDuration:2];
     } andCompletion:nil];
+    
+ 
 }
 
 - (UIImageView *)button {

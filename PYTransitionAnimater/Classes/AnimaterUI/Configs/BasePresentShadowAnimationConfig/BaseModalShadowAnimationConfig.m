@@ -128,7 +128,7 @@
     group.removedOnCompletion = NO;
     group.fillMode = kCAFillModeForwards;
     group.beginTime = 0;
-    
+    group.timingFunction = [CAMediaTimingFunction functionWithName:kCAMediaTimingFunctionEaseInEaseOut];
     [self.shadowAnimationView.layer addAnimation:group forKey:@"group"];
 }
 

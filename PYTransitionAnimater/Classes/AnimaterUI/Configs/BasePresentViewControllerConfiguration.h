@@ -94,20 +94,6 @@ typedef enum : NSUInteger {
     
 }DismissAnimationStyle;
 
-typedef struct {
-    /// 是否联动
-    BOOL isLinkage;
-    /// 在present 时 fromeview最终的frame
-    CGRect presentFromViewFrame;
-    /// 在dismiss 时 toView最终的frame
-    CGRect dismissToViewFrame;
-} BasePresentVcIsLinkageStruct;
-
-
-
-
-
-
 
 @interface BasePresentViewControllerConfiguration : NSObject
 
@@ -115,14 +101,14 @@ typedef struct {
  * present 动画样式
  * 默认为 PresentAnimationStyleNull
  */
-- (BasePresentViewControllerConfiguration *(^)(PresentAnimationStyle style))setUpPresentStyle;
-@property (nonatomic,assign) PresentAnimationStyle presentStyle;
+- (BasePresentViewControllerConfiguration *(^)(NSInteger style))setUpPresentStyle;
+@property (nonatomic,assign) NSInteger presentStyle;
 /**
  * dismiss 动画样式
  * 默认为 ModalAnimationStyleNull
  */
-- (BasePresentViewControllerConfiguration *(^)(DismissAnimationStyle style)) setUpDismissStyle;
-@property (nonatomic,assign) DismissAnimationStyle dismissStyle;
+- (BasePresentViewControllerConfiguration *(^)(NSInteger style)) setUpDismissStyle;
+@property (nonatomic,assign) NSInteger dismissStyle;
 
 /// 默认0.3
 - (BasePresentViewControllerConfiguration *(^)(CGFloat duration)) setUpPresentDuration;

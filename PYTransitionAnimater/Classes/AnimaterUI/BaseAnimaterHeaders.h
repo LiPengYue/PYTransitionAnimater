@@ -10,6 +10,8 @@
 #import "BasePresentViewController.h"
 #import "BasePresentViewControllerConfiguration.h"
 #import "BaseModalShadowAnimationConfig.h"
+#import "BaseProxyWeakHandler.h"
+
 @interface BaseAnimaterHeaders : NSObject
 
 @end
