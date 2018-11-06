@@ -1,7 +1,7 @@
 
 Pod::Spec.new do |s|
 s.name             = 'PYTransitionAnimater'
-s.version          = '0.3.0'
+s.version          = '0.3.1'
 s.summary          = '关于转场动画的工具'
 
 s.description      = <<-DESC
