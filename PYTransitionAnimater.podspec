@@ -6,7 +6,7 @@ s.summary          = '关于转场动画的工具'
 
 s.description      = <<-DESC
 转场动画的工具类，block设置动画，有默认动画，枚举配置。
-DES
+DESC
 
 s.homepage         = 'https://github.com/LiPengYue/PYTransitionAnimater'
 s.license          = { :type => 'MIT', :file => 'LICENSE' }

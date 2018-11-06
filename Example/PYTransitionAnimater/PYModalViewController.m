@@ -28,9 +28,13 @@
     //shadow
     self.shadowAnimationConfig
     .setUpDismissShadowColor([UIColor blueColor])
-    .setUpPresentShadowColor([UIColor redColor])
+    .setUpPresentShadowColor([UIColor blueColor])
+    .setUpPresentShadowOpacity(0.4)
+    .setUpDismissShadowOpacity(0.2)
     .setUpDismissShadowOffset(CGSizeMake(1, 1))
-    .setUpPresentShadowOffset(CGSizeMake(-10, 10));
+    .setUpPresentShadowOffset(CGSizeMake(-20, 10))
+    .setUpDismissShadowRadius(20)
+    .setUpPresentShadowRadius(30);
     
     self.animationView = self.button;
 
@@ -40,7 +44,7 @@
     __weak typeof(self)weakSelf = self;
     [self presentAnimationBegin:^(UIView *toView, UIView *fromeView) {
     } andCompletion:^(UIView *toView, UIView *fromeView) {
-        [weakSelf.shadowAnimationConfig beginPresentAnimationWithDuration:1];
+        [weakSelf.shadowAnimationConfig beginPresentAnimationWithDuration:0.5];
         
     }];
     [self dismissAnimationBegin:^(UIView *toView, UIView *fromeView) {
