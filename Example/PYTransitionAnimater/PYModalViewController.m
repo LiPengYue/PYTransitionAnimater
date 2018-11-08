@@ -17,15 +17,48 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
- 
+    // 赋值动画的view
+    self.animationView = self.button;
+    // present animation config
+    [self setupPresentConfig];
+    // shadow
+    [self setupShadow];
+    [self setupAnimationLifeCycles];
+    [self setupViews];
+}
+
+- (void) setupViews {
+    [self.view addSubview: self.button];
+    self.button.frame = CGRectMake(110, 0, self.view.frame.size.width - 110, self.view.frame.size.height);
+}
+
+#pragma mark - init
+
+#pragma mark - functions
+
+- (void) setup {
+    
+}
+
+- (void) setupPresentConfig {
+    PresentAnimationStyle presentStyle;
+    DismissAnimationStyle dismissStyle;
+    if (self.isModalNav) {
+        presentStyle = PresentAnimationStyleRight_left;
+        dismissStyle = DismissAnimationStyleLeft_Right;
+    }else{
+        presentStyle = PresentAnimationStyle_Shap_round;
+        dismissStyle = DismissAnimationStyleUp_bottom;
+    }
     self.presentConfig
-    .setUpPresentStyle(PresentAnimationStyle_Shap_round)
-    .setUpDismissStyle(DismissAnimationStyleLeft_Right)
+    .setUpPresentStyle(presentStyle)
+    .setUpDismissStyle(dismissStyle)
     .setUpPresentDuration(0.4)
     .setUpDismissDuration(0.4)
     .setUpIsLinkage(true);
-    
-    //shadow
+}
+
+- (void) setupShadow {
     self.shadowAnimationConfig
     .setUpDismissShadowColor([UIColor blueColor])
     .setUpPresentShadowColor([UIColor blueColor])
@@ -35,24 +68,29 @@
     .setUpPresentShadowOffset(CGSizeMake(-20, 10))
     .setUpDismissShadowRadius(20)
     .setUpPresentShadowRadius(30);
-    
-    self.animationView = self.button;
+}
 
-    [self.view addSubview: self.button];
-    self.button.frame = CGRectMake(110, 0, self.view.frame.size.width - 110, self.view.frame.size.height);
-    
+- (void) setupAnimationLifeCycles {
     __weak typeof(self)weakSelf = self;
     [self presentAnimationBegin:^(UIView *toView, UIView *fromeView) {
+        // 转场动画将要开始
+        NSLog(@"present 转场动画将要开始");
     } andCompletion:^(UIView *toView, UIView *fromeView) {
+        NSLog(@"present 转场动画已经结束,开启阴影动画");
         [weakSelf.shadowAnimationConfig beginPresentAnimationWithDuration:0.5];
         
     }];
-    [self dismissAnimationBegin:^(UIView *toView, UIView *fromeView) {
-        [weakSelf.shadowAnimationConfig beginDismissAnimationWithDuration:2];
-    } andCompletion:nil];
     
- 
+    [self dismissAnimationBegin:^(UIView *toView, UIView *fromeView) {
+          NSLog(@"dismiss 转场动画将要开始,开启阴影动画");
+        [weakSelf.shadowAnimationConfig beginDismissAnimationWithDuration:2];
+    } andCompletion:^(UIView *toView, UIView *fromeView) {
+          NSLog(@"dismiss 转场动画已经结束");
+    }];
 }
+
+
+//MARK: - lazy load
 
 - (UIImageView *)button {
     if (!_button) {
@@ -66,7 +104,7 @@
     return _button;
 }
 - (void) click {
-
+    
 }
 
 - (void)dealloc {

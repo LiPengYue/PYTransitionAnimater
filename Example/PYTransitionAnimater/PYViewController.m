@@ -54,8 +54,8 @@
     return _modalVC;
 }
 - (void)click_modalVCButton {
-    BasePresentViewController *vc = [PYModalViewController new];
-    
+    PYModalViewController *vc = [PYModalViewController new];
+    vc.isModalNav = false;
     [self presentViewController: vc animated:true completion:nil];
 }
 
@@ -70,9 +70,13 @@
     return _modalNavigationVC;
 }
 - (void)click_modalNavigationVCButton {
-    BasePresentNavigationController *vc = [PYModalViewController new].presentNavigationController;
-    
-    [self presentViewController: vc animated:true completion:nil];
+    PYModalViewController *vc = [PYModalViewController new];
+   
+    vc.isModalNav = true;
+    [self presentViewController:
+     vc.presentNavigationController
+                       animated:true
+                     completion:nil];
 }
 @end
 

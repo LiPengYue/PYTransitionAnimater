@@ -10,5 +10,5 @@
 #import <PYTransitionAnimater/BaseAnimaterHeaders.h>
 #import "PYCustomPresentViewController.h"
 @interface PYModalViewController : PYCustomPresentViewController
-
+@property (nonatomic,assign) BOOL isModalNav;
 @end
