@@ -59,6 +59,8 @@
 }
 
 - (void) setupShadow {
+    
+    
     self.shadowAnimationConfig
     .setUpDismissShadowColor([UIColor blueColor])
     .setUpPresentShadowColor([UIColor blueColor])
