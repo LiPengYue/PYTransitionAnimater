@@ -1,6 +1,32 @@
-# PYTransitionAnimater
+![transitionDemo](https://upload-images.jianshu.io/upload_images/4185621-8bb7c509815fac5a.gif?imageMogr2/auto-orient/strip)
 
-![转场动画.gif](http://upload-images.jianshu.io/upload_images/4185621-462ed58e40a04439.gif?imageMogr2/auto-orient/strip)
+
+> 1.[github源码](https://github.com/wazrx/XWTrasitionPractice)：简书作者[wazrx](http://www.jianshu.com/u/80e096a6331e)
+2.OC：[转场动画的管理工具类（无交互）](https://github.com/LiPengYue/PYTransitionTool)
+3.swift: [转场动画的管理工具类（无交互)](https://github.com/LiPengYue/PYTransitionTool_swift)
+
+**oc 链式配置**
+`转场动画样式 以及时间 配置`
+```
+self.presentConfig
+    .setUpPresentStyle(presentStyle)
+    .setUpDismissStyle(dismissStyle)
+    .setUpPresentDuration(0.4)
+    .setUpDismissDuration(0.4)
+    .setUpIsLinkage(true);
+```
+`modal 的view 的阴影设置`
+```
+self.shadowAnimationConfig
+    .setUpDismissShadowColor([UIColor blueColor])
+    .setUpPresentShadowColor([UIColor blueColor])
+    .setUpPresentShadowOpacity(0.4)
+    .setUpDismissShadowOpacity(0.2)
+    .setUpDismissShadowOffset(CGSizeMake(1, 1))
+    .setUpPresentShadowOffset(CGSizeMake(-20, 10))
+    .setUpDismissShadowRadius(20)
+    .setUpPresentShadowRadius(30);
+```
 
 
 #一、 参考资料:
@@ -74,7 +100,7 @@ UITransitionContextToViewControllerKey表示将要切入的VC。
 -----------------------------------------------------------------------
 
 #三、没有交互的代码具体思想步骤
->情景: VC_a跳到VC_b ,注意，转场动画不难，但是套路一定要明显，我们都是有原则的人。[戳这里看源码](https://github.com/LiPengYue/PYTransitionTool)
+>情景: VC_a跳到VC_b ,注意，转场动画不难，但是套路一定要明显，我们都是有原则的人。[戳这里看源码](https://github.com/LiPengYue/PYTransitionAnimater)
 
 **1. 创建`VC_a`：` VC_a`可以什么都不用做，直接`presen`**
 
@@ -173,35 +199,7 @@ UITransitionContextToViewControllerKey表示将要切入的VC。
 在 Custom 模式下的**dismissal 转场**（在present中要添加）中不要像其他的转场那样将 toView(presentingView) 加入 containerView，否则 presentingView 将消失不见，而应用则也很可能假死。而 FullScreen 模式下可以使用与前面的容器类 VC 转场同样的代码。因此，上一节里示范的 Slide 动画控制器不适合在 Custom 模式下使用，放心好了，Demo 里适配好了，具体的处理措施，请看下一节的处理
 
 
-#六、代码学习
+#六、代码
  1.[github源码](https://github.com/wazrx/XWTrasitionPractice)：简书作者[wazrx](http://www.jianshu.com/u/80e096a6331e)
 2.OC：[转场动画的管理工具类（无交互）](https://github.com/LiPengYue/PYTransitionTool)
 3.swift: [转场动画的管理工具类（无交互)](https://github.com/LiPengYue/PYTransitionTool_swift)
-
-[![CI Status](http://img.shields.io/travis/LiPengYue/PYTransitionAnimater.svg?style=flat)](https://travis-ci.org/LiPengYue/PYTransitionAnimater)
-[![Version](https://img.shields.io/cocoapods/v/PYTransitionAnimater.svg?style=flat)](http://cocoapods.org/pods/PYTransitionAnimater)
-[![License](https://img.shields.io/cocoapods/l/PYTransitionAnimater.svg?style=flat)](http://cocoapods.org/pods/PYTransitionAnimater)
-[![Platform](https://img.shields.io/cocoapods/p/PYTransitionAnimater.svg?style=flat)](http://cocoapods.org/pods/PYTransitionAnimater)
-
-## Example
-
-To run the example project, clone the repo, and run `pod install` from the Example directory first.
-
-## Requirements
-
-## Installation
-
-PYTransitionAnimater is available through [CocoaPods](http://cocoapods.org). To install
-it, simply add the following line to your Podfile:
-
-```ruby
-pod 'PYTransitionAnimater'
-```
-
-## Author
-
-LiPengYue, 702029772@qq.com
-
-## License
-
-PYTransitionAnimater is available under the MIT license. See the LICENSE file for more info.
