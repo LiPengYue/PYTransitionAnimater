@@ -46,6 +46,11 @@
     [self.presentViewController presentCompletionFunc];
 }
 
+- (void) presentNullAnimationFunc {
+    [self presentAnimation:^(BasePresentAnimationHandler *weakSelf) {
+    } andCompletionBlock:nil];
+}
+
 - (void) presentZoomAnimationFunc {
     
     self.animationView.transform = CGAffineTransformMakeScale(0, 0);

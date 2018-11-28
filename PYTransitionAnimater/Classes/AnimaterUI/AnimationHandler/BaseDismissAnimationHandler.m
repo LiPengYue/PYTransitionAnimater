@@ -12,6 +12,7 @@
 
 
 @implementation BaseDismissAnimationHandler
+
 - (void) dismissAnimation:(void(^)(BaseDismissAnimationHandler *weakSelf))block
        andCompletionBlock:(void(^)(BaseDismissAnimationHandler *weakSelf))completion {
     
@@ -37,6 +38,11 @@
 
 - (void) dismissAnimationCompletionFunc {
     [self.presentViewController dismissAnimationCompletionFunc];
+}
+
+- (void) dismissNullAnimationFunc {
+    [self dismissAnimation:^(BaseDismissAnimationHandler *weakSelf) {
+    } andCompletionBlock:nil];
 }
 
 - (void) dismissZoomAnimationFunc {

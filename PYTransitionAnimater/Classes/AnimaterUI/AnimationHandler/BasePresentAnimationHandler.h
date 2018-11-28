@@ -10,6 +10,7 @@
  present 动画实现类
  */
 @interface BasePresentAnimationHandler : BaseAnimationHandler
+- (void) presentNullAnimationFunc;
 - (void) presentZoomAnimationFunc;
 - (void) presentBottom_upAnimationFunc;
 - (void) presentAnimationStyleLeftFunc;

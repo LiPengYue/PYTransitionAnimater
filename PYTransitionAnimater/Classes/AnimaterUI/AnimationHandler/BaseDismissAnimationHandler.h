@@ -11,6 +11,7 @@
  dismiss 动画实现类
  */
 @interface BaseDismissAnimationHandler : BaseAnimationHandler
+- (void) dismissNullAnimationFunc;
 - (void) dismissZoomAnimationFunc;
 - (void) dismissAnimationStyleUp_bottomAnimationFunc;
 - (void) dismissAnimationStyleBottom_UpFunc;

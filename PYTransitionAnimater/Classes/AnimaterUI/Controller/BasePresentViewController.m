@@ -119,10 +119,11 @@
         
         switch (weakSelf.presentConfig.presentStyle) {
             case PresentAnimationStyleNull:
-                weakSelf.animation_animater.isAccomplishAnima = true;
+                [weakSelf.presentAnimationHandler presentNullAnimationFunc];
                 break;
             case PresentAnimationStyleZoom:
                 [weakSelf.presentAnimationHandler presentZoomAnimationFunc];
+                break;
             case PresentAnimationStyleBottom_up:
                 [weakSelf.presentAnimationHandler presentBottom_upAnimationFunc];
                 break;
@@ -171,9 +172,11 @@
         
         switch (weakSelf.presentConfig.dismissStyle) {
             case DismissAnimationStyleNull:
-                weakSelf.animation_animater.isAccomplishAnima = true;
+                [weakSelf.dismissAnimationHandler dismissNullAnimationFunc];
+                break;
             case DismissAnimationStyleZoom:
                 [weakSelf.dismissAnimationHandler dismissZoomAnimationFunc];
+                break;
             case DismissAnimationStyleUp_bottom:
                 [weakSelf.dismissAnimationHandler dismissAnimationStyleUp_bottomAnimationFunc];
                 break;
