@@ -55,6 +55,7 @@
     .setUpDismissStyle(dismissStyle)
     .setUpPresentDuration(0.4)
     .setUpDismissDuration(0.4)
+    .setUpDismissEndAlpha(0)
     .setUpIsLinkage(true);
 }
 

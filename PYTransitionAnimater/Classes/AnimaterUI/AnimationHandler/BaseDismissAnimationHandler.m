@@ -15,7 +15,6 @@
 
 - (void) dismissAnimation:(void(^)(BaseDismissAnimationHandler *weakSelf))block
        andCompletionBlock:(void(^)(BaseDismissAnimationHandler *weakSelf))completion {
-    
     __weak typeof(self)weakSelf = self;
     [UIView
      animateWithDuration:self.presentConfig.dismissDuration
@@ -27,7 +26,7 @@
          if (block) {
              block(weakSelf);
          }
-         self.toView.backgroundColor = [UIColor colorWithWhite:0 alpha:0];
+         self.fromView.backgroundColor = [UIColor colorWithWhite:0 alpha:0];
      } completion:^(BOOL finished) {
          if(completion) {
              completion(weakSelf);
